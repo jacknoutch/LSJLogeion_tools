@@ -29,7 +29,7 @@ from pprint import pprint
 def main():
 
     # Load XML files
-    path_LSJ = "../LSJLogeion/"
+    path_LSJ = "../LSJLogeionOld/"
     lsj_xml_files = os.listdir(path_LSJ) # all files in the file path
     lsj_xml_files = [x for x in lsj_xml_files if x[-4:] == ".xml"] # only XML files please
     lsj_xml_files.remove("greatscott01.xml") # front matter; not required for search
@@ -58,7 +58,7 @@ def main():
             wrap_bibl_element(plutarch_references)
 
             # Save the new XML
-            new_path = path_LSJ # "../LSJLogeionNew/"
+            new_path = "../LSJLogeion/"
             with open(new_path + file, "w") as f2:
                 file_string = etree.tostring(root, encoding="unicode")
                 f2.write(file_string)
@@ -201,7 +201,7 @@ def wrap_bibl_element(references):
         # Create the new <bibl> element
         stephanus = clean_stephanus(reference["raw_stephanus"])
         author, work = get_tlg_reference(stephanus, csv_rows)
-        new_bibl_element = etree.Element("bibl", {"n": f"Perseus:abo:tlg,{author},{work},{stephanus}"})
+        new_bibl_element = etree.Element("bibl", {"n": f"Perseus:abo:tlg,{author},{work}:{stephanus}"})
 
         # The target element is the one whose tail contains the stephanus reference
         # This is kept track of using the reference's index, offset by the number of previous insertions
@@ -233,7 +233,7 @@ def clean_stephanus(raw_stephanus):
 def get_tlg_reference(stephanus_reference, rows):
     for row in rows:
         tlg_author = row[7]
-        tlg_work = row[8][3:]
+        tlg_work = row[8]
         if is_larger_stephanus(stephanus_reference, row[6]):
             return (tlg_author, tlg_work)
     return None
@@ -243,14 +243,22 @@ def is_larger_stephanus(ref1: str, ref2: str):
 
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+    # all characters except the last is the page number
     page1 = int(ref1[:-1])
     page2 = int(ref2[:-1])
+
+    # the last character is the section letter [a-f]
     section1 = ref1[-1:]
     section2 = ref2[-1:]
+
+    # if 
     if page1 == page2:
+
         alphabet_ref1 = alphabet.index(section1)
         alphabet_ref2 = alphabet.index(section2)
+
         return alphabet_ref1 <= alphabet_ref2
+    
     return page1 < page2
 
 #
