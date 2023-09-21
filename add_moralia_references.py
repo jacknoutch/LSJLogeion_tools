@@ -228,9 +228,18 @@ def wrap_bibl_element(references: list):
         parent_count.append(parent)
 
 def clean_stephanus(raw_stephanus: str) -> str:
-    re_lsj = r"(?<=[1-2]\.)\d{1,4}[a-f]"
-    match = re.search(re_lsj, raw_stephanus)
-    return match.group() if match else raw_stephanus
+    # TODO: raw_stephanus could be, e.g. "1.234a, 345b"  and this function not raise an exception
+    if not isinstance(raw_stephanus, str):
+        raise TypeError(f"raw_stephanus is of the wrong type: {type(raw_stephanus)}")
+
+    re_wyttenbach_stephanus = r"(?<=\b[1-2]\.)\d{1,4}[a-f]\b" # e.g. 2.1234a
+    match = re.search(re_wyttenbach_stephanus, raw_stephanus)
+
+    if not match:
+        re_simple_stephanus = r"(?<!\.)\b\d{1,4}[a-f]\b" # e.g. 1234a
+        match = re.search(re_simple_stephanus, raw_stephanus)
+
+    return match.group() if match else False
 
 def get_tlg_reference(stephanus_reference: str, rows: list) -> tuple:
     for row in rows:
