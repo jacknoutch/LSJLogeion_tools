@@ -1,258 +1,217 @@
-# This script searches LSJ to find all Plu. Moralia references
+# This script searches LSJ to find all Plu. Moralia references and wrap them in an appropriate <bibl> XML element
+#
+# LSJ refers to Plutarch's Moralia according to the 2 volume Wyttenbach edition.
+#
+# Wyttenbach references are of the following kind: 2.1234a, composed of the volumn of Wyttenbach, a period, and a stephanus number.
+# If LSJ refers to several references in the Moralia, it first uses a Wyttenbach reference, followed by stephanus numbers alone.
+#
+# The TLG and Wyttenbach references for Plutarch's Moralia can be found in plutarch_stephanus_tlg_references.csv
+
 
 # Examples of references to be caught:
-
 # 2.510f, 625b, 693a;
 # cf. <author>Plu.</author> 2.961e
-# <bibl n="Perseus:abo:tlg,0007,069:38c"><author>Plu.</author> <title>[Aud.phil.]</title> 2.38c</bibl></cit>, cf. 145b
 # <author>Plu.</author> <title>Crass.</title> 8</bibl></cit>; <cit><quote lang="greek">οἰκέτας ὠνίους ἐξάγειν</quote> <author>Id.</author> 2.680e</cit>
 # <author>Plu.</author> <title>Agis</title> 4</bibl>; <i>refinement,</i> <author>Id.</author> 2.972d;
+
+# Examples of references not to be caught:
+# <bibl n="Perseus:abo:tlg,0007,069:38c"><author>Plu.</author> <title>[Aud.phil.]</title> 2.38c</bibl></cit>, cf. 145b
 # <author>Plu.</author> l.c.
 
-# 
+# Prepatory work for this script:
+# - Make sure all "Id." references are surrounded by <author> tags
 
-import csv, os, re
+import csv, os, re, string, sys
 from lxml import etree
 
 # MAIN
 
 def main():
 
+    arguments = sys.argv[1:]
+    
     # Load XML files
-    path_LSJ = "../LSJLogeionOld/"
+    path_LSJ = arguments[0] if arguments else "../LSJLogeionOld/"
     lsj_xml_files = os.listdir(path_LSJ) # all files in the file path
     lsj_xml_files = [x for x in lsj_xml_files if x[-4:] == ".xml"] # only XML files please
     lsj_xml_files.remove("greatscott01.xml") # front matter; not required for search
     lsj_xml_files.sort()
     
     # Initialise the collector
-    plutarch_references = []
-    # a reference is a dictionary: 
-    # {
-    #   "parent": <element>, 
-    #   "child": <author>, 
-    #   "index": 1, 
-    #   "raw_stephanus": "1.2345f", 
-    #   "tail": "some string"
-    # }
+    plutarch_elements = []
     
-    counter = 0 # for outputting the number of references added
+    references_added = 0
     
-    # Loop through the files and retrieve all references to Plutarch's Moralia
     for file in lsj_xml_files:
 
         # Reset the collector for each file
-        plutarch_references[:] = []
+        plutarch_elements[:] = []
 
         with open(path_LSJ + file, "r") as f1:
 
             print(f"{file} in progress...")
             
             file_string = f1.read().encode("utf-8") # encoding required for lxml
-            root = etree.fromstring(file_string)
             
-            plutarch_references += get_plutarch_references(root)
+            root = etree.fromstring(file_string)
+            plutarch_elements += get_plutarch_elements(root)
     
             # Wrap the references in <bibl> elements
-            wrap_bibl_element(plutarch_references)
+            new_elements = wrap_bibl_elements(plutarch_elements)
+            references_added += len(new_elements)
 
             # Save the new XML
-            new_path = "../LSJLogeion/"
+            new_path = arguments[1] if len(arguments) == 2 else "../LSJLogeion/"
             with open(new_path + file, "w") as f2:
                 file_string = etree.tostring(root, encoding="unicode")
                 f2.write(file_string)
                 print(f"{file} done!")
 
             # output the file's added references
-            counter += len(plutarch_references)
-            print(f"{counter} references complete")
+            print(f"{references_added} references added")
     
 # COLLECTION OF REFERENCES
 
-def get_plutarch_references(root: etree.Element) -> list:
-    plutarch_references = []
+def get_plutarch_elements(root: etree.Element) -> list:
+    plutarch_elements = []
 
-    # All references will either be in the tail of an <author> tag with text "Plu.", or
-    # in the tail of an <author> tag with "Id." which refers back to an <author> tag with text "Plu."
-    
-    # "True" Plutarch references are <author> tags of the form <author>Plu.</author>
-    # "Id" Plutarch references are of the form <author>Id.</author> but refer to Plutarch
-
-    # Find the parent elements of all author elements with the text "Plu."
-    # Parents are required in order to insert new elements correctly
-    plutarch_parent_elements = root.findall(".//author[.='Plu.']..")
-    plutarch_parent_elements = list(set(plutarch_parent_elements)) # unique values please
+    # Assumes that all references will be in the tail of an <author> tag, either with text "Plu.", or
+    # with text "Id.", referring back to an <author> tag with text "Plu."
+    author_elements = root.findall(".//author")
 
     # Find all Plutarch references in each 
-    for plutarch_parent in plutarch_parent_elements:
-        true_plutarch_references = get_true_plutarch_references(plutarch_parent)
-        plutarch_references += true_plutarch_references
+    preceding_element = None
+    for element in author_elements:
 
-    # Find all entries, within which to search for author elements
-    entry_elements = root.findall(".//div2")
-    for entry_element in entry_elements:
-        id_plutarch_references = get_id_plutarch_references(entry_element)
-        plutarch_references += id_plutarch_references
-
-    return plutarch_references
-
-def get_true_plutarch_references(parent: etree.Element) -> list:
-    true_plutarch_references = []
-
-    # True Plutarch references are in <author> tags with text "Plu."
-    plutarch_elements = parent.findall("./author[.='Plu.']")
-
-    # Only author tags with a Stephanus reference in its tail are needed
-    for plutarch_element in plutarch_elements:
+        if element.text == "Plu.":              # A Plutarch author tag
+            preceding_element = element.text
+            plutarch_elements.append(element)
         
-        raw_stephanus_references = get_raw_stephanus_references(plutarch_element)
-        index = parent.index(plutarch_element)
+        elif not element.text == "Id.":         # An author tag with neither Plu. nor Id.
+            preceding_element = element.text
         
-        for raw_stephanus_reference in raw_stephanus_references:
-            reference = {"parent": parent, "child": plutarch_element, "index": index, "raw_stephanus": raw_stephanus_reference, "tail": plutarch_element.tail}
-            true_plutarch_references.append(reference)
+        elif preceding_element == "Plu.":
+            plutarch_elements.append(element)   # An Id. author tag preceded by one with Plu.
 
-    return true_plutarch_references
+    return [e for e in plutarch_elements if has_wyttenbach_reference(e)]
 
-def get_raw_stephanus_references(plutarch_element: etree.Element) -> list:
-    raw_stephanus_references = []
+def has_wyttenbach_reference(element: etree.Element) -> bool:
+    # elements without a tail are not required
+    tail = element.tail
+    if not tail: return False
 
-    # Stephanus references are in the tail of the <author> element
-    tail = plutarch_element.tail
-    if not tail:
-        return []
-    
-    # The first Stephanus reference is always of the format 1.2345f
-    re_stephanus = r"[1-2]\.\d{1,4}[a-f]"
-    stephanus_match = re.search(re_stephanus, tail)
-    
-    if not stephanus_match:
-        return []
-    
-    stephanus = str(stephanus_match.group())
-    raw_stephanus_references.append(stephanus)
-    
-    # There may be further Stephanus references, of the format 1234f
-    tail = tail.replace(stephanus, "")
-    re_short_stephanus = r",.{0,8}\b(\d{1,4}[a-f])"
-    matches = list(re.finditer(re_short_stephanus, tail))
-    for match in matches:
-        raw_stephanus_references.append(match.groups()[0])
-    
-    return raw_stephanus_references
-
-def get_id_plutarch_references(parent: etree.Element) -> list:
-    id_plutarch_references = []
-
-    # Find all the author elements, and Id. author elements
-    author_elements = parent.findall(".//author")
-    id_elements = parent.findall(".//author[.='Id.']")
-
-    # Only "Id." author tags immediately preceded by "Plu." author tags are needed
-    for id_element in id_elements:
-        previous_author_element = get_previous_author_element(id_element, author_elements)
-        if previous_author_element is not None:
-
-            # A reference to an actual author may be followed by several "Id." elements; we must find the previous instance which isn't "Id."
-            while previous_author_element.text == "Id.":
-                previous_author_element = get_previous_author_element(previous_author_element, author_elements)
-
-            if previous_author_element.text == "Plu.":
-                
-                # The direct parent is required to insert new elements correctly 
-                parent_elements = parent.findall(".//author[.='Id.']..")
-                for parent_element in parent_elements:
-                    if id_element in parent_element:
-                        id_parent = parent_element
-
-                index = id_parent.index(id_element)
-
-                raw_stephanus_references = get_raw_stephanus_references(id_element)
-                for raw_stephanus_reference in raw_stephanus_references:
-                    reference = {"parent": id_parent, "child": id_element, "index": index, "raw_stephanus": raw_stephanus_reference, "tail": id_element.tail}
-                    id_plutarch_references.append(reference)
-    
-    return id_plutarch_references
-
-def get_previous_author_element(origin: etree.Element, author_elements: list) -> etree.Element:
-    origin_index = author_elements.index(origin)
-    if author_elements.index(origin) > 0:
-        return author_elements[origin_index - 1]
+    # check for a Wyttenbach reference in the tail
+    re_wyttenbach = r"\b[1-2]\.[1-9]\d{0,3}[a-f]\b"
+    return re.search(re_wyttenbach, tail)
 
 # INSERTION OF NEW ELEMENTS
 
-def wrap_bibl_element(references: list):
-    # Insertion into the XML tree requires the references to be sorted, from lowest to highest index
-    references = sorted(references, key=lambda reference: reference["index"])
+def wrap_bibl_elements(elements: list):    
+    new_elements = []
+
+    # Open the CSV file containing the references for Plutarch's Moralia, for converting the stephanus
+    plutarch_rows = get_plutarch_rows_from_csv("plutarch_stephanus_tlg_references.csv")
+
+    for element in elements:
+        new_elements.append(wrap_bibl_element(element, plutarch_rows))
+        
+    return new_elements
+
+def wrap_bibl_element(element: etree.Element, plutarch_rows: list) -> list:
+    parent = element.getparent()
+    index = parent.index(element) + 1 # +1 because we will insert *after* the existing author element
+    tail = element.tail
     
-    # As elements are inserted, a tally must be kept so that later elements with the same parents can have their index offset correctly
-    parent_count = []
+    # For debugging:
+    # print(etree.tostring(parent, encoding="unicode"))
 
-    for reference in references:
-        # for ease of use...
-        parent = reference["parent"]
-        index = reference["index"]
-        raw_reference = reference["raw_stephanus"]
+    # Get all individual references from tail of each element
+    stephanus_references = []
+    tails = []
+
+    # Find the first stephanus references, e.g. 2.1234a
+    re_wyttenbach_stephanus = r"\b([1-2]\.[1-9]\d{0,3}[a-f])\b"
+    wyttenbach_stephanus_pieces = re.split(re_wyttenbach_stephanus, tail)
+    
+    assert(len(wyttenbach_stephanus_pieces) == 3) # To protect against multiple "first" stephanus references
+
+    # Replace the element's tail with any string preceding the reference
+    element.tail = wyttenbach_stephanus_pieces[0]
+
+    stephanus_references.append(wyttenbach_stephanus_pieces[1])
+
+    # Find the remaining, "simply" stephanus references, e.g. 1234b
+    re_simple_stephanus = r"(?<!\d\.)\b([1-9]\d{0,3}[a-f])\b"
+    remaining_pieces = re.split(re_simple_stephanus, wyttenbach_stephanus_pieces[2])
+
+    if len(remaining_pieces) > 1: 
+        # remaining stephanus references were found
+        stephanus_references += remaining_pieces[1::2]
+
+    # The rest of the strings will be tails to the new elements    
+    tails += remaining_pieces[::2]
+
+    # Create the new <bibl> elements
+    for i, raw_reference in enumerate(stephanus_references):
+
+        stephanus = clean_stephanus(raw_reference)
+        author, work = get_tlg_reference(stephanus, plutarch_rows)
         
-        # Open the CSV file containing the references for Plutarch's Moralia, for converting the stephanus
-        csv_rows = []
-        with open("plutarch_stephanus_tlg_references.csv") as csv_file:
-            csv_reader = csv.reader(csv_file)
-            fields = next(csv_reader)
-            for row in csv_reader:
-                csv_rows.append(row)
-
-        # Create the new <bibl> element
-        stephanus = clean_stephanus(reference["raw_stephanus"])
-        author, work = get_tlg_reference(stephanus, csv_rows)
         new_bibl_element = etree.Element("bibl", {"n": f"Perseus:abo:tlg,{author},{work}:{stephanus}"})
-
-        # The target element is the one whose tail contains the stephanus reference
-        # This is kept track of using the reference's index, offset by the number of previous insertions
-        target_element = parent[index + parent_count.count(parent)]
+        new_bibl_element.text = raw_reference
+        new_bibl_element.tail = tails[i]
         
-        # Split the tail into three parts: part 1 is the tail of the target_element,
-        # part 2 is the text of the new <bibl> element, part 3 is the tail of the new <bibl> element
-        old_tail = target_element.tail
-        re_split = re.compile(f"({raw_reference})")
-        tail_pieces = re.split(re_split, old_tail)
+        parent.insert(index + i, new_bibl_element)
 
-        target_element.tail = tail_pieces[0]
-        new_bibl_element.text = tail_pieces[1]
-        new_bibl_element.tail = tail_pieces[2]
+    # For debugging:
+    # print(etree.tostring(parent, encoding="unicode"))
+    
+    return stephanus_references
 
-        # Insert the <bibl> after (+1) the target element
-        parent.insert(parent.index(target_element) + 1, new_bibl_element)
-        
-        # Since an insertion has occurred, add this parent to the tally list
-        parent_count.append(parent)
+def get_plutarch_rows_from_csv(source):
+    csv_rows = []
+    with open(source) as csv_file:
+        csv_reader = csv.reader(csv_file)
+        fields = next(csv_reader)
+        for row in csv_reader:
+            csv_rows.append(row)
+        return csv_rows
 
 def clean_stephanus(raw_stephanus: str) -> str:
     # TODO: raw_stephanus could be, e.g. "1.234a, 345b"  and this function not raise an exception
     if not isinstance(raw_stephanus, str):
         raise TypeError(f"raw_stephanus is of the wrong type: {type(raw_stephanus)}")
 
-    re_wyttenbach_stephanus = r"(?<=\b[1-2]\.)\d{1,4}[a-f]\b" # e.g. 2.1234a
+    re_wyttenbach_stephanus = r"(?<=\b[1-2]\.)[1-9]\d{0,3}[a-f]" # e.g. 2.1234a
     match = re.search(re_wyttenbach_stephanus, raw_stephanus)
 
     if not match:
-        re_simple_stephanus = r"(?<!\.)\b\d{1,4}[a-f]\b" # e.g. 1234a
+        re_simple_stephanus = r"(?<!\d\.)\b[1-9]\d{0,3}[a-f]" # e.g. 1234a
         match = re.search(re_simple_stephanus, raw_stephanus)
 
-    return match.group() if match else False
+    if not match:
+        raise ValueError(f"raw_stephanus ({raw_stephanus}) does not contain a stephanus reference")
 
-def get_tlg_reference(stephanus_reference: str, rows: list) -> tuple:
-    for row in rows:
+    return match.group()
+
+def get_tlg_reference(stephanus_reference: str, csv_rows: list) -> tuple:
+
+    for row in csv_rows:
         tlg_author = row[7]
         tlg_work = row[8]
-        if is_larger_stephanus(stephanus_reference, row[6]):
+        if is_larger_stephanus(stephanus_reference, row[6]): # row[6] is the stephanus reference representing the last section of the work
             return (tlg_author, tlg_work)
-    return ()
+        
+    raise ValueError(f"stephanus_reference ({stephanus_reference})is too large for Plutarch's Moralia")
 
 def is_larger_stephanus(ref1: str, ref2: str) -> bool:
-    # clean stephanus references are of the form '1234a'
+    if not isinstance(ref1, str) and not isinstance(ref2, str):
+        raise TypeError(f"one or both of ref1 ({type(ref1)}) and ref2 ({type(ref2)}) are not strings")
 
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    # clean stephanus references are of the form '1234a'
+    re_clean_stephanus = r"[1-9]\d{0,3}[a-f]"
+    assert re.fullmatch(re_clean_stephanus, ref1), f"ref1 ('{ref1}') is not a clean stephanus reference"
+    assert re.fullmatch(re_clean_stephanus, ref2), f"ref2 ('{ref2}') is not a clean stephanus reference"
 
     # all characters except the last is the page number
     page1 = int(ref1[:-1])
@@ -262,7 +221,8 @@ def is_larger_stephanus(ref1: str, ref2: str) -> bool:
     section1 = ref1[-1:]
     section2 = ref2[-1:]
 
-    # if 
+    # if the page number is the same, the section letter differentiates the two
+    alphabet = string.ascii_lowercase
     if page1 == page2:
 
         alphabet_ref1 = alphabet.index(section1)
