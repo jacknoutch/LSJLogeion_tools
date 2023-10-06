@@ -1,5 +1,5 @@
 import csv, unittest
-from add_moralia_references import *
+from LSJLogeion_tools.add_moralia_references.add_moralia_references import *
 
 class TestCleanStephanus(unittest.TestCase):
     def test_input_incorrect_stephanus(self):
@@ -10,10 +10,13 @@ class TestCleanStephanus(unittest.TestCase):
             "1.1a23",
             "1b23",
             "0001a",
+            "1.1a2.",
+            "1a2",
+            "1.12ab",
+            "123ab",
         ]
         for incorrect_input in incorrect_inputs:
-            with self.assertRaises(ValueError):
-                print(incorrect_input)
+            with self.assertRaises(ValueError, msg=f"{incorrect_input}"):
                 clean_stephanus(incorrect_input)
 
     def test_input_incorrect_type(self):
@@ -31,7 +34,8 @@ class TestCleanStephanus(unittest.TestCase):
 class TestGetTLGReference(unittest.TestCase):
     def setUp(self):
         self.csv_rows = []
-        with open("plutarch_stephanus_tlg_references.csv") as csv_file:
+        path = os.path.join(os.getcwd(), "LSJLogeion_tools", "plutarch_stephanus_tlg_references.csv")
+        with open(path) as csv_file:
             csv_reader = csv.reader(csv_file)
             fields = next(csv_reader)
             for row in csv_reader:
