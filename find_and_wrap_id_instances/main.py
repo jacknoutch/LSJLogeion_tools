@@ -1,8 +1,7 @@
 # This script finds all "Id." instances and wraps them in an <author> tag
 
-import os, re, sys
-from lxml import etree
-from LSJLogeion_tools.find_and_wrap_id_instances.find_and_wrap_id_instances import *
+import os, sys
+from find_and_wrap_id_instances import *
 
 def main():
 
@@ -14,9 +13,10 @@ def main():
     files = load_files(path_from)
 
     # TODO: print out a running count of the number of elements added with each file
+    new_elements_counter = 0
 
     # Loop through the XML files
-    for file in files[:1]:
+    for file in files:
 
         with open(path_from + file, "r") as f1:
 
@@ -24,7 +24,7 @@ def main():
             file_string = f1.read().encode("utf-8")
             new_file_string = find_and_wrap_id_instances(file_string)
             print(f"{file} complete!")
-
+            
             with open(path_to + file, "w") as f2:
                 f2.write(new_file_string )
 

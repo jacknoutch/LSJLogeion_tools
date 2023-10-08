@@ -1,4 +1,5 @@
 import unittest
+from lxml import etree
 from LSJLogeion_tools.find_and_wrap_id_instances.find_and_wrap_id_instances import *
 
 class TestFindAndWrapIdInstances(unittest.TestCase):
@@ -25,6 +26,10 @@ class TestFindAndWrapIdInstances(unittest.TestCase):
 
         result = find_and_wrap_id_instances(input_xml)
         self.assertEqual(result.strip(), expected_output.strip())
+        expected_output_xml = etree.fromstring(result)
+        
+        result_xml = etree.fromstring(result)
+        self.assertEqual("".join(result_xml.itertext()), "".join(expected_output_xml.itertext()))
 
 if __name__ == '__main__':
     unittest.main()

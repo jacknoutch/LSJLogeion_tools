@@ -1,7 +1,7 @@
 import re
 from lxml import etree
 
-def find_and_wrap_id_instances(input_xml):
+def find_and_wrap_id_instances(input_xml: str) -> str:
     root = etree.fromstring(input_xml)
 
     elements_for_wrapping = get_elements_for_wrapping(root)
@@ -9,11 +9,13 @@ def find_and_wrap_id_instances(input_xml):
     for element in elements_for_wrapping:
         wrap(element)
 
+    print(f"{len(elements_for_wrapping)} new elements added")
     return etree.tostring(root, encoding="unicode")
 
 def get_elements_for_wrapping(root):
+    # elements with "Id." in the *tail* are required
     elements_for_wrapping = []
-    
+
     entry_wrapper = root.find(".//div1")
 
     for element in entry_wrapper.iterfind(".//*"):
@@ -22,7 +24,7 @@ def get_elements_for_wrapping(root):
             continue
     
         re_id = r"Id\."
-        matches = re.findall(re_id, element.tail)
+        matches = re.findall(re_id, element.text)
 
         if matches:
             elements_for_wrapping.append(element)

@@ -1,6 +1,8 @@
 import csv, unittest
 from LSJLogeion_tools.add_moralia_references.add_moralia_references import *
 
+# TODO: Test that the input string (without XML) is the same length as the output string 
+
 class TestCleanStephanus(unittest.TestCase):
     def test_input_incorrect_stephanus(self):
         # none of these are stephanus references for Plutarch's Moralia
