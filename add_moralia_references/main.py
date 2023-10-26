@@ -21,7 +21,7 @@
 # Prepatory work for this script:
 # - Make sure all "Id." references are surrounded by <author> tags
 
-import csv, os, re, string, sys
+import os, sys
 from lxml import etree
 from add_moralia_references import *
 
@@ -32,24 +32,21 @@ def main():
     arguments = sys.argv[1:]
     
     # Load XML files
-    working_directory = "/home/jacknoutch/projects/logeion/"
-    path_LSJ = arguments[0] if arguments else "LSJLogeion/"
-    lsj_xml_files = os.listdir(working_directory + path_LSJ) # all files in the file path
-    lsj_xml_files = [x for x in lsj_xml_files if x[-4:] == ".xml"] # only XML files please
-    lsj_xml_files.remove("greatscott01.xml") # front matter; not required for search
-    lsj_xml_files.sort()
+    path_from = arguments[0] if arguments else "../../LSJLogeion/"
+    path_to = arguments[1] if len(arguments) > 1 else "../../LSJLogeionNew/"
+    files = load_files(path_from)
     
     # Initialise the collector
     plutarch_elements = []
     
     references_added = 0
     
-    for file in lsj_xml_files:
+    for file in files:
 
         # Reset the collector for each file
         plutarch_elements[:] = []
 
-        with open(working_directory + path_LSJ + file, "r") as f1:
+        with open(path_from + file, "r") as f1:
 
             print(f"{file} in progress...")
             
@@ -70,14 +67,23 @@ def main():
                 return
 
             # Save the new XML
-            new_path = arguments[1] if len(arguments) == 2 else "LSJLogeionNew/"
-            with open(working_directory + new_path + file, "w") as f2:
+            with open(path_to + file, "w") as f2:
                 file_string = etree.tostring(root, encoding="unicode")
                 f2.write(file_string)
                 print(f"{file} done!")
 
             # output the file's added references
             print(f"{references_added} references added")
+
+def load_files(path):
+    
+    # Load XML files
+    lsj_xml_files = os.listdir(path) # all files in the file path
+    lsj_xml_files = [x for x in lsj_xml_files if x[-4:] == ".xml"] # only XML files please
+    lsj_xml_files.remove("greatscott01.xml") # front matter; not required for search
+    lsj_xml_files.sort()
+
+    return lsj_xml_files
     
 # RUN
 
