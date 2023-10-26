@@ -8,12 +8,12 @@ def main():
     arguments = sys.argv[1:]
 
     # Load the XML files
-    path_from = arguments[0] if arguments else "../LSJLogeion/"
-    path_to = arguments[1] if len(arguments) > 1 else "../LSJLogeionNew/"
+    path_from = arguments[0] if arguments else "../../LSJLogeion/"
+    path_to = arguments[1] if len(arguments) > 1 else "../../LSJLogeionNew/"
     files = load_files(path_from)
 
     # TODO: print out a running count of the number of elements added with each file
-    new_elements_counter = 0
+    # new_elements_counter = 0
 
     # Loop through the XML files
     for file in files:

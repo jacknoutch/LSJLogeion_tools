@@ -12,7 +12,7 @@ def find_and_wrap_id_instances(input_xml: str) -> str:
     print(f"{len(elements_for_wrapping)} new elements added")
     return etree.tostring(root, encoding="unicode")
 
-def get_elements_for_wrapping(root):
+def get_elements_for_wrapping(root: etree.ElementBase) -> list[etree.ElementBase]:
     # elements with "Id." in the *tail* are required
     elements_for_wrapping = []
 
@@ -22,9 +22,9 @@ def get_elements_for_wrapping(root):
 
         if not element.tail:
             continue
-    
+
         re_id = r"Id\."
-        matches = re.findall(re_id, element.text)
+        matches = re.findall(re_id, element.tail)
 
         if matches:
             elements_for_wrapping.append(element)
