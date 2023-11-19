@@ -1,0 +1,347 @@
+
+greatscott02.xml in progress...
+
+
+greatscott03.xml in progress...
+
+  2.656f <bibl default="NO">2.656f</bibl>. 
+
+greatscott04.xml in progress...
+
+
+greatscott05.xml in progress...
+
+  2.470d <bibl default="NO">2.470d</bibl>. 
+  2.694f <bibl default="NO">2.694f</bibl>; 
+  2.611f <bibl default="NO">2.611f</bibl>
+
+greatscott06.xml in progress...
+
+
+greatscott07.xml in progress...
+
+
+greatscott08.xml in progress...
+
+  2.880e <bibl default="NO">2.880e</bibl>:—in 
+ 2.1060d <bibl>2.1060d</bibl>; 
+ 2.1034b <bibl default="NO">2.1034b</bibl>. 
+
+greatscott09.xml in progress...
+
+  2.742c <bibl default="NO">2.742c</bibl>.
+
+greatscott10.xml in progress...
+
+  2.326f <bibl default="NO">2.326f</bibl>; cf. Armen. 
+  2.728a <bibl default="NO">2.728a</bibl>; 
+  2.516f <bibl default="NO">2.516f</bibl>, 
+  2.559b <bibl>2.559b</bibl>. 
+  2.542e <bibl default="NO">2.542e</bibl>, 
+  2.467d <bibl default="NO">2.467d</bibl>.
+
+greatscott11.xml in progress...
+
+
+greatscott12.xml in progress...
+
+
+greatscott13.xml in progress...
+
+
+greatscott14.xml in progress...
+
+
+greatscott15.xml in progress...
+
+  2.583c <bibl default="NO">2.583c</bibl>.
+  2.747c <bibl default="NO">2.747c</bibl>, 
+  2.819d <bibl default="NO">2.819d</bibl>; at Jerusalem, the 
+
+greatscott16.xml in progress...
+
+  2.212f <bibl default="NO">2.212f</bibl>, 
+
+greatscott17.xml in progress...
+
+  2.548b <bibl default="NO">2.548b</bibl>. 
+
+greatscott18.xml in progress...
+
+  2.549d <bibl default="NO">2.549d</bibl>.
+
+greatscott19.xml in progress...
+
+  2.587c <bibl>2.587c</bibl>.
+
+greatscott20.xml in progress...
+
+
+greatscott21.xml in progress...
+
+  2.353e <bibl default="NO">2.353e</bibl>.
+
+greatscott22.xml in progress...
+
+  2.396e <bibl default="NO">2.396e</bibl>. 
+
+greatscott23.xml in progress...
+
+  2.362d <bibl default="NO">2.362d</bibl>; 
+  2.726f <bibl default="NO">2.726f</bibl>. 
+
+greatscott24.xml in progress...
+
+  2.914e <bibl default="NO">2.914e</bibl>.
+
+greatscott25.xml in progress...
+
+  2.760f <bibl default="NO">2.760f</bibl>.
+
+greatscott26.xml in progress...
+
+  2.828f <bibl default="NO">2.828f</bibl>. 
+  2.961c <bibl default="NO">2.961c</bibl> ; 
+  2.482a <bibl default="NO">2.482a</bibl>. 
+
+greatscott27.xml in progress...
+
+
+greatscott28.xml in progress...
+
+  2.432e <bibl default="NO">2.432e</bibl>; 
+  2.456f <bibl>2.456f</bibl>, 
+  2.294b <bibl default="NO">2.294b</bibl>; 
+  2.923c <bibl default="NO">2.923c</bibl>; 
+  2.728d <bibl default="NO">2.728d</bibl>, 
+
+greatscott29.xml in progress...
+
+
+greatscott30.xml in progress...
+
+
+greatscott31.xml in progress...
+
+
+greatscott32.xml in progress...
+
+
+greatscott33.xml in progress...
+
+  2.443d <bibl default="NO">2.443d</bibl>, 
+
+greatscott34.xml in progress...
+
+  2.780a <bibl default="NO">2.780a</bibl>; 
+
+greatscott35.xml in progress...
+
+
+greatscott36.xml in progress...
+
+
+greatscott37.xml in progress...
+
+  2.212c <bibl default="NO">2.212c</bibl>.
+
+greatscott38.xml in progress...
+
+  2.235f <bibl default="NO">2.235f</bibl> (
+  2.225f <bibl>2.225f</bibl>: 
+  2.813e <bibl default="NO">2.813e</bibl>, 
+ 2.1140c <bibl default="NO">2.1140c</bibl>, 
+  2.420f <bibl default="NO">2.420f</bibl>, 
+
+greatscott39.xml in progress...
+
+  2.825b <bibl default="NO">2.825b</bibl>, 
+
+greatscott40.xml in progress...
+
+  2.335a <bibl>2.335a</bibl>; 
+
+greatscott41.xml in progress...
+
+
+greatscott42.xml in progress...
+
+ 2.1137b <bibl default="NO">2.1137b</bibl>, etc.: generally, 
+  2.711f <bibl default="NO">2.711f</bibl>, 
+
+greatscott43.xml in progress...
+
+  2.979a <bibl default="NO">2.979a</bibl>; 
+
+greatscott44.xml in progress...
+
+  2.997d <bibl default="NO">2.997d</bibl>:—
+  2.412c <bibl>2.412c</bibl>. 
+
+greatscott45.xml in progress...
+
+
+greatscott46.xml in progress...
+
+
+greatscott47.xml in progress...
+
+  2.347f <bibl default="NO">2.347f</bibl> (pl.), 
+
+greatscott48.xml in progress...
+
+  2.452b <bibl default="NO">2.452b</bibl>.
+
+greatscott49.xml in progress...
+
+
+greatscott50.xml in progress...
+
+  2.334c <bibl default="NO">2.334c</bibl> (
+
+greatscott51.xml in progress...
+
+
+greatscott52.xml in progress...
+
+
+greatscott53.xml in progress...
+
+  2.853b <bibl default="NO">2.853b</bibl>, 
+
+greatscott54.xml in progress...
+
+
+greatscott55.xml in progress...
+
+
+greatscott56.xml in progress...
+
+
+greatscott57.xml in progress...
+
+  2.101e <bibl n="Perseus:abo:tlg,0007,075:101e">2.101e</bibl> sq.; 
+  2.738f <bibl default="NO">2.738f</bibl>. 
+
+greatscott58.xml in progress...
+
+  2.213e <bibl default="NO">2.213e</bibl>; 
+  2.283a <bibl n="Perseus:abo:tlg,0007,084:283a" default="NO">2.283a</bibl> ; 
+
+greatscott59.xml in progress...
+
+  2.586b <bibl default="NO">2.586b</bibl>.
+  2.405d <bibl>2.405d</bibl> ; 
+
+greatscott60.xml in progress...
+
+  2.515b <bibl n="Perseus:abo:tlg,0007,102:515b">2.515b</bibl>).
+
+greatscott61.xml in progress...
+
+  2.507c <bibl default="NO">2.507c</bibl>, 
+  2.789e <bibl default="NO">2.789e</bibl>.
+
+greatscott62.xml in progress...
+
+  2.362e <bibl>2.362e</bibl>.
+
+greatscott63.xml in progress...
+
+  2.394b <bibl default="NO">2.394b</bibl>. (The first syll. of 
+  2.924d <bibl default="NO">2.924d</bibl>. 
+
+greatscott64.xml in progress...
+
+
+greatscott65.xml in progress...
+
+
+greatscott66.xml in progress...
+
+
+greatscott67.xml in progress...
+
+  2.905e <bibl default="NO">2.905e</bibl>. 
+
+greatscott68.xml in progress...
+
+  2.993a <bibl n="Perseus:abo:tlg,0007,131:993a">2.993a</bibl> sq., cf. 
+
+greatscott69.xml in progress...
+
+  2.587f <bibl default="NO">2.587f</bibl>. 
+ 2.1091d <bibl default="NO">2.1091d</bibl>. 
+
+greatscott70.xml in progress...
+
+
+greatscott71.xml in progress...
+
+  2.523b <bibl>2.523b</bibl>; orig. of citizens entrusted with the collection of figs as part of the public revenues of Athens and the denouncing of tax-evaders, acc. to 
+  2.814d <bibl default="NO">2.814d</bibl>.
+
+greatscott72.xml in progress...
+
+  2.409c <bibl default="NO">2.409c</bibl>.
+  2.355b <bibl default="NO">2.355b</bibl>; 
+
+greatscott73.xml in progress...
+
+
+greatscott74.xml in progress...
+
+
+greatscott75.xml in progress...
+
+  2.563f <bibl default="NO">2.563f</bibl>, etc.; 
+
+greatscott76.xml in progress...
+
+
+greatscott77.xml in progress...
+
+
+greatscott78.xml in progress...
+
+  2.949d <bibl default="NO">2.949d</bibl>. 
+  2.364d <bibl n="Perseus:abo:tlg,0007,089:364d">2.364d</bibl>) derives it 
+
+greatscott79.xml in progress...
+
+
+greatscott80.xml in progress...
+
+  2.974c <bibl default="NO">2.974c</bibl>; 
+  2.813a <bibl>2.813a</bibl>. 
+  2.680b <bibl default="NO">2.680b</bibl>. 
+  2.742a <bibl default="NO">2.742a</bibl>.
+  2.822a <bibl>2.822a</bibl> (pl.). 
+ 2.1118c <bibl>2.1118c</bibl>.
+
+greatscott81.xml in progress...
+
+  2.405f <bibl default="NO">2.405f</bibl>.
+
+greatscott82.xml in progress...
+
+  2.613e <bibl default="NO">2.613e</bibl>, 
+  2.924a <bibl>2.924a</bibl>; 
+  2.678a <bibl default="NO">2.678a</bibl>; 
+
+greatscott83.xml in progress...
+
+  2.583e <bibl>2.583e</bibl>; 
+  2.504f <bibl n="Perseus:abo:tlg,0007,101:504f" default="NO">2.504f</bibl>.
+
+greatscott84.xml in progress...
+
+  2.768b <bibl>2.768b</bibl>.
+
+greatscott85.xml in progress...
+
+
+greatscott86.xml in progress...
+
+  2.590f <bibl default="NO">2.590f</bibl>; prop. of wolves, 
+  2.276d <bibl default="NO">2.276d</bibl>, 

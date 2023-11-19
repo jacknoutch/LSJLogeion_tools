@@ -6,34 +6,94 @@ from lxml import etree
 def get_plutarch_elements(root: etree.Element) -> list:
     plutarch_elements = []
 
-    # Assumes that all references will be in the tail of an <author> tag, either with text "Plu.", or
-    # with text "Id.", referring back to an <author> tag with text "Plu."
-    author_elements = root.findall(".//author")
+    elements = root.findall(".//")
+    
+    plutarch_rows = get_plutarch_rows_from_csv(os.path.join(os.getcwd() + "/plutarch_stephanus_tlg_references.csv"))
 
-    # Find all Plutarch references in each 
-    preceding_element = None
-    for element in author_elements:
 
-        if element.text == "Plu.":              # A Plutarch author tag
-            preceding_element = element.text
-            plutarch_elements.append(element)
-        
-        elif not element.text == "Id.":         # An author tag with neither Plu. nor Id.
-            preceding_element = element.text
-        
-        elif preceding_element == "Plu.":
-            plutarch_elements.append(element)   # An Id. author tag preceded by one with Plu.
+    last_author = None
+    for element in elements:
 
-    return [e for e in plutarch_elements if has_wyttenbach_reference(e)]
+        if element.tag == "author" and element.text != "Id.":
+            last_author = element
+            
+        # TODO: what about wyttenbach references or stephanus references in the text?
+        text = element.text
+        tail = get_tail(element)
+        stephanus = get_stephanus(tail)
+
+        if stephanus:
+            try:
+                get_tlg_reference(stephanus, plutarch_rows)
+            except ValueError:
+                continue
+
+            if last_author.text == "Plu." and last_author.getparent().tag == "bibl":
+                plutarch_elements.append(element)
+
+    return plutarch_elements
 
 def has_wyttenbach_reference(element: etree.Element) -> bool:
     # elements without a tail are not required
-    tail = element.tail
+    tail = element.text
     if not tail: return False
 
     # check for a Wyttenbach reference in the tail
     re_wyttenbach = r"\b[1-2]\.[1-9]\d{0,3}[a-f]\b"
     return re.search(re_wyttenbach, tail)
+
+def get_stephanus(text: str) -> bool:
+    if not text:
+        return ""
+    re_stephanus = r"(?<!\d\.)\b([1-9]\d{0,3}[a-f])\b"
+    try:
+        return re.search(re_stephanus, text).group(0)
+    except AttributeError:
+        return False
+
+def get_tail(element: etree.Element) -> str:
+    try:
+        return element.tail
+    except AttributeError:
+        return ""
+
+def wrap_reference(element: etree.Element) -> bool:
+    
+    parent = element.getparent()
+    index = parent.index(element)
+    tail = element.tail
+
+    re_stephanus = r"(?<!\d\.)\b([1-9]\d{0,3}[a-f])\b"
+    stephanus_pieces = re.split(re_stephanus, tail, maxsplit=1)
+
+    plutarch_rows = get_plutarch_rows_from_csv(os.path.join(os.getcwd() + "/plutarch_stephanus_tlg_references.csv"))
+    author, work = get_tlg_reference(stephanus_pieces[1], plutarch_rows)
+    n_reference = f"Perseus:abo:tlg,{author},{work}:{stephanus_pieces[1]}"
+
+    ancestor = parent
+    while ancestor is not None:
+        ancestor_stephanus = None
+        ancestor_n = ancestor.get("n")
+        if ancestor_n:
+            ancestor_stephanus = ancestor_n[ancestor_n.rfind(":")+1:]
+        if ancestor.tag == "bibl" and ancestor_stephanus == stephanus_pieces[1]:
+            return False
+        ancestor = ancestor.getparent()
+
+    element.tail = stephanus_pieces[0]
+
+    new_bibl_element = etree.Element("bibl", {"n": n_reference})
+    new_bibl_element.text = stephanus_pieces[1]
+    if len(stephanus_pieces) > 2:
+        new_bibl_element.tail = stephanus_pieces[2]
+        
+    parent.insert(index + 1, new_bibl_element)
+
+    etree_print(parent)
+    return True
+
+def etree_print(element: etree.Element) -> None:
+    print(etree.tostring(element, encoding="unicode"))
 
 # INSERTION OF NEW ELEMENTS
 
@@ -133,7 +193,7 @@ def get_tlg_reference(stephanus_reference: str, csv_rows: list) -> tuple:
         if is_larger_stephanus(stephanus_reference, row[6]): # row[6] is the stephanus reference representing the last section of the work
             return (tlg_author, tlg_work)
         
-    raise ValueError(f"stephanus_reference ({stephanus_reference})is too large for Plutarch's Moralia")
+    raise ValueError(f"stephanus_reference ({stephanus_reference}) is too large for Plutarch's Moralia")
 
 def is_larger_stephanus(ref1: str, ref2: str) -> bool:
     if not isinstance(ref1, str) and not isinstance(ref2, str):

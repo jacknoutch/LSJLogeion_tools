@@ -48,7 +48,7 @@ def main():
 
         with open(path_from + file, "r") as f1:
 
-            print(f"{file} in progress...")
+            print(f"\n{file} in progress...\n")
             
             file_string = f1.read().encode("utf-8") # encoding required for lxml
             
@@ -57,8 +57,10 @@ def main():
             plutarch_elements += get_plutarch_elements(root)
     
             # Wrap the references in <bibl> elements
-            new_elements = wrap_bibl_elements(plutarch_elements)
-            references_added += len(new_elements)
+            for element in plutarch_elements:
+                new_element = wrap_reference(element)
+                if new_element:
+                    references_added += 1
 
             # Error checking - has the text changed at all?
             ending_text = "".join(root.itertext())
@@ -72,7 +74,7 @@ def main():
                 f2.write(file_string)
                 print(f"{file} done!")
 
-            # output the file's added references
+            output the file's added references
             print(f"{references_added} references added")
 
 def load_files(path):
