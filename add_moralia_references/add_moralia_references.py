@@ -1,37 +1,73 @@
 import csv, os, re, string
 from lxml import etree
-    
+
+class Reference(object):
+    pass
+
 # COLLECTION OF REFERENCES
 
 def get_plutarch_elements(root: etree.Element) -> list:
     plutarch_elements = []
 
+    # Load the csv file which specifies the author and work from any Plutarch Stephanus reference.
+    plutarch_rows = load_moralia_tlg_csv()
+
+    # Loop through the elements, keeping a track of the last <author> tag
     elements = root.findall(".//")
-    
-    plutarch_rows = get_plutarch_rows_from_csv(os.path.join(os.getcwd() + "/plutarch_stephanus_tlg_references.csv"))
-
-
     last_author = None
+
     for element in elements:
 
         if element.tag == "author" and element.text != "Id.":
             last_author = element
-            
-        # TODO: what about wyttenbach references or stephanus references in the text?
+        
+        if last_author is not None and last_author.text != "Plu.":
+            continue
+
         text = element.text
         tail = get_tail(element)
-        stephanus = get_stephanus(tail)
 
-        if stephanus:
-            try:
-                get_tlg_reference(stephanus, plutarch_rows)
-            except ValueError:
-                continue
+        if has_reference(text) or has_reference(tail):
+            plutarch_elements.append(element)
 
-            if last_author.text == "Plu." and last_author.getparent().tag == "bibl":
-                plutarch_elements.append(element)
+        # stephanus = get_stephanus(tail)
+
+        # if stephanus:
+        #     # try:
+        #     #     get_tlg_reference(stephanus, plutarch_rows)
+        #     # except ValueError:
+        #     #     continue
+
+        #     if last_author.text == "Plu." and last_author.getparent().tag == "bibl":
+        #         plutarch_elements.append(element)
 
     return plutarch_elements
+
+def has_reference(text: str) -> bool:
+    if not text:
+        return False
+    
+    # this regex matches for wyttenbach (2.123a) and stephanus (345b) references
+    re_reference = r"(\b[1-2]\.[1-9]\d{0,3}[a-f]\b)|(?<!\d\.)\b([1-9]\d{0,3}[a-f])\b"
+
+    return re.search(re_reference, text)
+
+def get_references_old(text: str) -> list:
+    references = []
+    
+    # this regex matches for wyttenbach (2.123a) and stephanus (345b) references
+    re_reference = r"(\b[1-2]\.[1-9]\d{0,3}[a-f]\b)|(?<!\d\.)\b([1-9]\d{0,3}[a-f])\b"
+
+    matches = re.split(re_reference, text)
+
+    tails = matches[::2] # every 2nd string
+    refs = matches[1::2] # every second string beginning with the second
+
+    for i, ref in enumerate(refs):
+        references.append({"reference": ref, "tail": tails[i+1]})
+
+    return references
+
 
 def has_wyttenbach_reference(element: etree.Element) -> bool:
     # elements without a tail are not required
@@ -41,6 +77,43 @@ def has_wyttenbach_reference(element: etree.Element) -> bool:
     # check for a Wyttenbach reference in the tail
     re_wyttenbach = r"\b[1-2]\.[1-9]\d{0,3}[a-f]\b"
     return re.search(re_wyttenbach, tail)
+
+def get_references(element: etree.Element) -> list:
+    
+    text = element.text
+    tail = get_tail(element)
+
+    print(text,tail)
+    etree_print(element)
+
+    text_refs = []
+    tail_refs = []
+    
+    # this regex matches for wyttenbach (2.123a) and stephanus (345b) references
+    re_reference = r"(\b[1-2]\.[1-9]\d{0,3}[a-f]\b|(?<!\d\.)\b[1-9]\d{0,3}[a-f])\b"
+
+    text_matches = re.split(re_reference, text)
+
+    text_inbetweens = text_matches[::2]
+    text_references = text_matches[1::2]
+
+    text_refs.append({"reference": None, "location": "text", "inbetween": text_inbetweens[0]})
+    for i, reference in enumerate(text_references):
+        text_refs.append({"reference": reference, "location": "text", "inbetween": text_inbetweens[i+1]})
+
+    if tail is None:
+        return text_refs
+
+    tail_matches = re.split(re_reference, tail)
+
+    tail_inbetweens = tail_matches[::2]
+    tail_references = tail_matches[1::2]
+
+    tail_refs.append({"reference": None, "location": "tail", "inbetween": tail_inbetweens[0]})
+    for j, reference in enumerate(tail_references):
+        tail_refs.append({"reference": reference, "location": "tail", "inbetween": tail_inbetweens[j+1]})
+
+    return (text_refs, tail_refs)
 
 def get_stephanus(text: str) -> bool:
     if not text:
@@ -57,39 +130,107 @@ def get_tail(element: etree.Element) -> str:
     except AttributeError:
         return ""
 
-def wrap_reference(element: etree.Element) -> bool:
+def load_moralia_tlg_csv() -> list:
+    script_path = os.path.abspath(__file__)
+    script_dir = os.path.dirname(script_path)
+    csv_path = os.path.join(script_dir, "../plutarch_stephanus_tlg_references.csv")
     
-    parent = element.getparent()
-    index = parent.index(element)
-    tail = element.tail
+    return get_plutarch_rows_from_csv(os.path.join(csv_path))
 
-    re_stephanus = r"(?<!\d\.)\b([1-9]\d{0,3}[a-f])\b"
-    stephanus_pieces = re.split(re_stephanus, tail, maxsplit=1)
+def wrap_element_references(element: etree.Element) -> bool:
 
-    plutarch_rows = get_plutarch_rows_from_csv(os.path.join(os.getcwd() + "/plutarch_stephanus_tlg_references.csv"))
-    author, work = get_tlg_reference(stephanus_pieces[1], plutarch_rows)
-    n_reference = f"Perseus:abo:tlg,{author},{work}:{stephanus_pieces[1]}"
+    plutarch_rows = load_moralia_tlg_csv()
 
-    ancestor = parent
-    while ancestor is not None:
-        ancestor_stephanus = None
-        ancestor_n = ancestor.get("n")
-        if ancestor_n:
-            ancestor_stephanus = ancestor_n[ancestor_n.rfind(":")+1:]
-        if ancestor.tag == "bibl" and ancestor_stephanus == stephanus_pieces[1]:
-            return False
-        ancestor = ancestor.getparent()
+    if element.tag == "bibl":
+        print(element.text)
+    
+    text_references, tail_references = get_references(element)
 
-    element.tail = stephanus_pieces[0]
+    # references are a list of dicts; each dict is as follow:
+    #   {
+    #       "reference": 2.1234a,
+    #       
+    #   }
 
-    new_bibl_element = etree.Element("bibl", {"n": n_reference})
-    new_bibl_element.text = stephanus_pieces[1]
-    if len(stephanus_pieces) > 2:
-        new_bibl_element.tail = stephanus_pieces[2]
+    
+
+    # for reference in text_references:
+    #     # is the reference already in a <bibl> element?
+    #     if reference["location"] == "tail":
+    #         # add a 
+    #         pass
         
-    parent.insert(index + 1, new_bibl_element)
+    #     if element.tag != "bibl":
+    #         pass
 
-    etree_print(parent)
+    #     elif reference["location"] == "tail":
+    #         pass
+
+    #     else:
+    #         etree_print(element)
+    #         print("REFERENCE ALREADY IN TEXT OF BIBL TAG")
+
+        
+
+
+    # parent = element.getparent()
+    # index = parent.index(element) + 1 # new elements to be inserted *after* the existing element
+    # tail = element.tail
+
+
+    # for i, ref in enumerate(references):
+    #     if ref["reference"]:
+    #         print(ref)
+    #         stephanus = clean_stephanus(ref["reference"])
+    #         author, work = get_tlg_reference(stephanus, plutarch_rows)
+    #         n_reference = f"Perseus:abo:tlg,{author},{work}:{stephanus}"
+
+    #         ancestor = parent
+    #         while ancestor is not None:
+    #             stephanus_already_wrapped = False
+    #             ancestor_stephanus = None
+    #             ancestor_n = ancestor.get("n")
+    #             if ancestor_n:
+    #                 ancestor_stephanus = ancestor_n[ancestor_n.rfind(":") + 1:]
+    #             if ancestor.tag == "bibl" and ancestor_stephanus == stephanus:
+    #                 stephanus_already_wrapped = True
+    #                 break
+    #             ancestor = ancestor.getparent()
+            
+    #         if stephanus_already_wrapped:
+    #             continue
+
+    #         new_bibl_element = etree.Element("bibl", {"n": n_reference})
+    #         new_bibl_element.text = stephanus
+    #         new_bibl_element.tail = ref["inbetween"]
+                
+    #         parent.insert(index + i, new_bibl_element)
+
+    #         etree_print(parent)
+
+    # author, work = get_tlg_reference(stephanus_pieces[1], plutarch_rows)
+    # n_reference = f"Perseus:abo:tlg,{author},{work}:{stephanus_pieces[1]}"
+
+    # ancestor = parent
+    # while ancestor is not None:
+    #     ancestor_stephanus = None
+    #     ancestor_n = ancestor.get("n")
+    #     if ancestor_n:
+    #         ancestor_stephanus = ancestor_n[ancestor_n.rfind(":")+1:]
+    #     if ancestor.tag == "bibl" and ancestor_stephanus == stephanus_pieces[1]:
+    #         return False
+    #     ancestor = ancestor.getparent()
+
+    # element.tail = stephanus_pieces[0]
+
+    # new_bibl_element = etree.Element("bibl", {"n": n_reference})
+    # new_bibl_element.text = stephanus_pieces[1]
+    # if len(stephanus_pieces) > 2:
+    #     new_bibl_element.tail = stephanus_pieces[2]
+        
+    # parent.insert(index + 1, new_bibl_element)
+
+    # etree_print(parent)
     return True
 
 def etree_print(element: etree.Element) -> None:

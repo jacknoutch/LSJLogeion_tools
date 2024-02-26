@@ -1,9 +1,12 @@
-# This script searches LSJ to find all Plu. Moralia references and wrap them in an appropriate <bibl> XML element
+# This script searches LSJ to find all Plu. Moralia references and wrap them in an appropriate <bibl> XML element.
 #
 # LSJ refers to Plutarch's Moralia according to the 2 volume Wyttenbach edition.
 #
-# Wyttenbach references are of the following kind: 2.1234a, composed of the volumn of Wyttenbach, a period, and a stephanus number.
-# If LSJ refers to several references in the Moralia, it first uses a Wyttenbach reference, followed by stephanus numbers alone.
+# Wyttenbach references are of the following kind: 2.1234a, composed of the volumn of Wyttenbach, a period, a stephanus
+# page number and a section letter.
+#
+# If LSJ refers to several references in the Moralia, it first uses a Wyttenbach reference, followed by stephanus
+# numbers alone. e.g. 2.1234a, 1000b.
 #
 # The TLG and Wyttenbach references for Plutarch's Moralia can be found in plutarch_stephanus_tlg_references.csv
 
@@ -34,7 +37,7 @@ def main():
     # Load XML files
     path_from = arguments[0] if arguments else "../../LSJLogeion/"
     path_to = arguments[1] if len(arguments) > 1 else "../../LSJLogeionNew/"
-    files = load_files(path_from)
+    files = load_xml_files(path_from)
     
     # Initialise the collector
     plutarch_elements = []
@@ -58,7 +61,8 @@ def main():
     
             # Wrap the references in <bibl> elements
             for element in plutarch_elements:
-                new_element = wrap_reference(element)
+                new_element = wrap_element_references(element)
+                # TODO: does wrap_reference return False if it fails? it needs to for the following conditional...
                 if new_element:
                     references_added += 1
 
@@ -74,18 +78,18 @@ def main():
                 f2.write(file_string)
                 print(f"{file} done!")
 
-            output the file's added references
+            # output the file's added references
             print(f"{references_added} references added")
 
-def load_files(path):
+def load_xml_files(path):
     
     # Load XML files
-    lsj_xml_files = os.listdir(path) # all files in the file path
-    lsj_xml_files = [x for x in lsj_xml_files if x[-4:] == ".xml"] # only XML files please
-    lsj_xml_files.remove("greatscott01.xml") # front matter; not required for search
-    lsj_xml_files.sort()
+    xml_files = os.listdir(path) # all files in the file path
+    xml_files = [x for x in xml_files if x[-4:] == ".xml"] # only XML files please
+    xml_files.remove("greatscott01.xml") # front matter; not required for search
+    xml_files.sort()
 
-    return lsj_xml_files
+    return xml_files
     
 # RUN
 
