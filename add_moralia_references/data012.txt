@@ -1,0 +1,6 @@
+ὀδοντίζω
+<bibl n="Perseus:abo:phi,0474,058:[15b]" default="NO" valid="yes">[15b]</bibl>. 
+n_attribute:            Perseus:abo:phi,0474,058:[15b]
+n_attribute_stephanus:                           [15b]
+text_stephanus:                                    15b
+-------------

@@ -1,0 +1,77 @@
+ἀπέρεισις
+2.1130d
+<bibl n="Perseus:abo:tlg,0007,141:1130d">2.1130d</bibl>
+text_stephanus:      1130d
+n_stephanus:         1130d
+text_work:             002
+n_work:                141
+text_author:          0094
+n_author:             0007
+---------------
+---------------
+ἄρσις
+2.1130a
+<bibl n="Perseus:abo:tlg,0007,141:1130a">2.1130a</bibl>
+text_stephanus:      1130a
+n_stephanus:         1130a
+text_work:             002
+n_work:                141
+text_author:          0094
+n_author:             0007
+---------------
+---------------
+ἀχθοφορία
+2.1130d
+<bibl n="Perseus:abo:tlg,0007,141:1130d">2.1130d</bibl>
+text_stephanus:      1130d
+n_stephanus:         1130d
+text_work:             002
+n_work:                141
+text_author:          0094
+n_author:             0007
+---------------
+---------------
+Ἔρεβος
+1130d
+<bibl n="Perseus:abo:tlg,0007,141:1130d">1130d</bibl> : metaph., 
+text_stephanus:      1130d
+n_stephanus:         1130d
+text_work:             002
+n_work:                141
+text_author:          0094
+n_author:             0007
+---------------
+---------------
+Καστόρειος
+2.1140c
+<bibl n="Perseus:abo:tlg,0007,004:2:1140c" default="NO">2.1140c</bibl>, 
+text_stephanus:      1140c
+n_stephanus:       2:1140c
+text_work:             002
+n_work:                004
+text_author:          0094
+n_author:             0007
+---------------
+---------------
+κενοταφέω
+2.1130b
+<bibl n="Perseus:abo:tlg,0007,141:1130b">2.1130b</bibl>
+text_stephanus:      1130b
+n_stephanus:         1130b
+text_work:             002
+n_work:                141
+text_author:          0094
+n_author:             0007
+---------------
+---------------
+κροῦσις
+2.1137b
+<bibl n="Perseus:abo:tlg,0007,012:2:1137b" default="NO" valid="yes">2.1137b</bibl>, etc.: generally, 
+text_stephanus:      1137b
+n_stephanus:       2:1137b
+text_work:             002
+n_work:                012
+text_author:          0094
+n_author:             0007
+---------------
+---------------
