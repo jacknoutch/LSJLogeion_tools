@@ -1,0 +1,783 @@
+
+greatscott02.xml in progress...
+
+
+greatscott03.xml in progress...
+
+
+greatscott04.xml in progress...
+
+cit
+<cit><quote lang="greek">Ἕλληνες Κρόνον ἀλληγοροῦσι τὸν χρόνον</quote> <bibl n="Perseus:abo:tlg,0007,089:363d"><author>Plu.</author> 2.363d</bibl></cit>, cf. 996b, 
+foreign
+<foreign lang="greek">χάριτες</foreign>" ib. 685a. (Cf.sq.)
+
+greatscott05.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:38b"><author>Plu.</author> <title>[Aud.]</title> 2.38b</bibl>, 706c, cf. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,071:76f"><author>Plu.</author> <title>[Profect.]</title> 2.76f</bibl>, cf. 1128c. 
+foreign
+<foreign lang="greek">-σεις τοῦ φρονήματος</foreign> ib. 78a; 
+i
+<i>causes the roughness of</i> rust, ib. 396a, cf. 454c.
+bibl
+<bibl n="Perseus:abo:tlg,0007,091:396a">396a</bibl>, cf. 454c.
+
+greatscott06.xml in progress...
+
+author
+<author>Plu.</author> 728d, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:46e"><author>Plu.</author> <title>[Aud.]</title> 2.46e</bibl>, 418b, 
+foreign
+<foreign lang="greek">ἀ. κοινωνία, ὁμιλία,</foreign> ib.752c,756e; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,113:752c">752c</bibl>,756e; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,078:142b"><author>Plu.</author> <title>[Coniug.]</title> 2.142b</bibl>, 405d; 
+author
+<author>Plu.</author> 857a, al.: in pl., ib. 417c, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,123:857a">857a</bibl>, al.: in pl., ib. 417c, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,072:91a"><author>Plu.</author> <title>[Util.]</title> 2.91a</bibl>, 198f: metaph., 
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:42d"><author>Plu.</author> <title>[Aud.]</title> 2.42d</bibl>, 54e, etc.:—hence 
+
+greatscott07.xml in progress...
+
+quote
+<quote lang="greek">τὸ ἀ. τοῦ βίου</quote> 92d
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:44e"><author>Plu.</author> <title>[Aud.]</title> 2.44e</bibl>, cf. 485a.
+bibl
+<bibl n="Perseus:abo:tlg,0007,067:10a"><author>Plu.</author> <title>[Lib. educ.]</title> 2.10a</bibl>, 537d, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:35a"><author>Plu.</author> <title>[Aud.poet.]</title> 2.35a</bibl>,172e:—opp. to these are 
+bibl
+<bibl n="Perseus:abo:tlg,0007,071:83d"><author>Plu.</author> <title>[Profect.]</title> 2.83d</bibl>,934d.
+
+greatscott08.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:16c"><author>Plu.</author> <title>[Aud.poet.]</title> 2.16c</bibl>,62c. 
+cit
+<cit><quote lang="greek">ἀπολελαυσμένος</quote> <bibl n="Perseus:abo:tlg,0007,139:1089c"><author>Plu.</author> 2.1089c</bibl></cit>,1099e (
+cit
+<cit><quote lang="greek">περιόδους</quote> <bibl n="Perseus:abo:tlg,0007,088:350e"><author>Plu.</author> 2.350e</bibl></cit>, cf. 384a. 
+
+greatscott09.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:29b"><author>Plu.</author> <title>[Aud.poet.]</title> 2.29b</bibl>,921f; 
+cit
+<cit><quote lang="greek">φιλοσοφίας</quote> <bibl n="Perseus:abo:tlg,0007,077:122f"><author>Plu.</author> <title>[Sanit.]</title> 2.122f</bibl></cit>, cf. 381b, 
+cit
+<cit><quote lang="greek">δυνάστης</quote> <bibl n="Perseus:abo:tlg,0007,086:321f"><author>Plu.</author> 2.321f</bibl></cit>, cf. 758f; 
+cit
+<cit><quote lang="greek">ἀρρεπὲς πρὸς εὐδαιμονίαν</quote> <bibl n="Perseus:abo:tlg,0007,138:1070a"><author>Plu.</author> 2.1070a</bibl></cit>, cf. 1015a; 
+
+greatscott10.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:24b"><author>Plu.</author> <title>[Aud.poet.]</title> 2.24b</bibl>,580d. 
+foreign
+<foreign lang="greek">ἂν ἰάσιμον ᾖ τὸ χεῖρον καὶ ἄ.</foreign> ib. 500c. 
+cit
+<cit><quote lang="greek">-μως</quote> <bibl n="Perseus:abo:tlg,0007,096:474d"><author>Plu.</author> 2.474d</bibl></cit>, 475f.
+foreign
+<foreign lang="greek">οὐ γὰρ αὐθάδης οὐδὲ αὐ. ὁ σώφρων ἀνήρ</foreign> ib. 823a, cf. 
+
+greatscott11.xml in progress...
+
+foreign
+<foreign lang="greek">λόγος</foreign> ib. 7b.
+
+greatscott12.xml in progress...
+
+foreign
+<foreign lang="greek">β. Διόνυσον πρὸς τὴν θάλασσαν</foreign> ib. 914d:—in 
+
+greatscott13.xml in progress...
+
+
+greatscott14.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:48d"><author>Plu.</author> <title>[Aud.]</title> 2.48d</bibl>, 50a. 
+
+greatscott15.xml in progress...
+
+cit
+<cit><quote lang="greek">ἱμάτιον</quote> <bibl n="Perseus:abo:tlg,0007,118:821e"><author>Plu.</author> 2.821e</bibl></cit>, cf. 565c. 
+
+greatscott16.xml in progress...
+
+
+greatscott17.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,071:78e"><author>Plu.</author> <title>[Profect.]</title> 2.78e</bibl>, etc.: pl., ib. 62d.
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:148d"><author>Plu.</author> <title>[Symp.]</title> 2.148d</bibl>, 272f.
+cit
+<cit><quote lang="greek">θεοὺς εἰς ὀνόματα στρατηγῶν</quote> <bibl n="Perseus:abo:tlg,0007,089:360a"><author>Plu.</author> 2.360a</bibl></cit>, cf. 377d, 757b. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,089:377d">377d</bibl>, 757b. 
+cit
+<cit><quote lang="greek">δ. δύναμις</quote> <bibl n="Perseus:abo:tlg,0007,134:1026d"><author>Plu.</author> 2.1026d</bibl></cit>, cf. 952b. 
+
+greatscott18.xml in progress...
+
+cit
+<cit><quote lang="greek">τὰς ψυχὰς φροντίσιν</quote> <bibl n="Perseus:abo:tlg,0007,077:133d"><author>Plu.</author> <title>[Sanit.]</title> 2.133d</bibl></cit>, cf. 97f (
+cit
+<cit><quote lang="greek">τὰ δ. σώματα</quote> <bibl n="Perseus:abo:tlg,0007,072:87c"><author>Plu.</author> <title>[Util.]</title> 2.87c</bibl></cit>, cf. 128e, 
+cit
+<cit><quote lang="greek">τινός</quote> <bibl n="Perseus:abo:tlg,0007,112:631a"><author>Plu.</author> 2.631a</bibl></cit>, cf. 513d.
+foreign
+<foreign lang="greek">αἱ δ. τῆς ψυχῆς</foreign> ib. 715f, cf. 441d; ‘patchiness’, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,112:715f">715f</bibl>, cf. 441d; ‘patchiness’, 
+foreign
+<foreign lang="greek">χαλκαῖ δ.,</foreign> ib. 297a, cf. Sch. 
+
+greatscott19.xml in progress...
+
+foreign
+<foreign lang="greek">τὸ ὅμοιον ὑπὸ τοῦ ὁμοίου -έστερον</foreign> ib. 651c: abs., 
+i
+<i>impassive</i>, ib. 454c, 
+
+greatscott20.xml in progress...
+
+
+greatscott21.xml in progress...
+
+gramGrp
+<gramGrp opt="n"><gram type="voice" opt="n">Pass.</gram></gramGrp>, ib. 951b, 
+foreign
+<foreign lang="greek">τῷ διψῆν</foreign> ib. 688f.
+bibl
+<bibl n="Perseus:abo:tlg,0007,071:85b"><author>Plu.</author> <title>[Profect.]</title> 2.85b</bibl>, 139f, 
+
+greatscott22.xml in progress...
+
+author
+<author>Plu.</author> 300a (s.v.l.).
+
+greatscott23.xml in progress...
+
+i
+<i>erratic</i>, ib. 336f.
+
+greatscott24.xml in progress...
+
+cit
+<cit><quote lang="greek">θυμὸν ἀνόητον</quote> <bibl n="Perseus:abo:tlg,0007,070:61e"><author>Plu.</author> <title>[Adul.]</title> 2.61e</bibl></cit>, cf. 464b. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,080:164f"><author>Id.</author> <title>[Superst.]</title> 2.164a</bibl>, 399f, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:32e"><author>Plu.</author> <title>[Aud.poet.]</title> 2.32e</bibl>, 38b; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:67c"><author>Plu.</author> <title>[Adul.]</title> 2.67c</bibl>,582e. 
+cit
+<cit><quote lang="greek">ἐ. καὶ διωθεῖσθαι τὸ πάθος</quote> <bibl n="Perseus:abo:tlg,0007,094:446b"><author>Id.</author> 2.446b</bibl></cit>, cf. 541a, 550c. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,106:541a">541a</bibl>, 550c. 
+foreign
+<foreign lang="greek">ἐπὶ ζυγοῦ πρὸς τὰ βελτίονα</foreign> ib. 469b.
+
+greatscott25.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:19e"><author>Plu.</author> <title>[Aud.poet.]</title> 2.19e</bibl>, cf. 735a; esp. in Astrol., 
+i
+<i>head, occur to</i> one, c. dat., ib. 585f: c. acc., 
+cit
+<cit><quote lang="greek">σύμφυτον . ., οὐκ ἐ.</quote> <bibl n="Perseus:abo:tlg,0007,094:451c"><author>Plu.</author> 2.451c</bibl></cit>, cf. 584e; 
+cit
+<cit><quote lang="greek">τινί</quote> <bibl n="Perseus:abo:tlg,0007,109:580d"><author>Id.</author> 2.580d</bibl></cit>, 589d, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:22b"><author>Plu.</author> <title>[Aud.poet.]</title> 2.22b</bibl>, 114d; 
+
+greatscott26.xml in progress...
+
+foreign
+<foreign lang="greek">πολὺ ποιεῖ τοῦ ψεύδους ἐ</foreign>. ib. 503d; 
+foreign
+<foreign lang="greek">ὁρμαὶ καὶ -σεις</foreign> ib.76c, etc.; of the male animal, ib.768e, 1095a (pl.).
+bibl
+<bibl n="Perseus:abo:tlg,0007,071:76c">76c</bibl>, etc.; of the male animal, ib.768e, 1095a (pl.).
+bibl
+<bibl n="Perseus:abo:tlg,0007,113:768e">768e</bibl>, 1095a (pl.).
+cit
+<cit><quote lang="greek">ποπάνοις ἵππον ποτάμιον</quote> <bibl n="Perseus:abo:tlg,0007,089:371d"><author>Plu.</author> 2.371d</bibl></cit>, cf. 362f:—
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:62a"><author>Plu.</author> <title>[Adul.]</title> 2.62a</bibl>,681f. 
+cit
+<cit><quote lang="greek">ἂν ἔρως ἐπισκήψῃ</quote> <bibl n="Perseus:abo:tlg,0007,113:767d"><author>Id.</author> 2.767d</bibl></cit>, cf. 701c; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:21c"><author>Plu.</author> <title>[Aud.poet.]</title> 2.21c</bibl>,69f, cf. 
+
+greatscott27.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:52a"><author>Plu.</author> <title>[Adul.]</title> 2.52a</bibl>,97a ; of the liver as 
+foreign
+<foreign lang="greek">έστερα [ὕδατα</foreign>] ib. 912f.
+i
+<i>easily led</i> to imitate, ib. 334d: 
+
+greatscott28.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:16b"><author>Plu.</author> <title>[Aud.poet.]</title> 2.16b</bibl>,736f. 
+foreign
+<foreign lang="greek">θῶς</foreign> ib. 981a. 
+cit
+<cit><quote lang="greek">τὸ μετʼ εὐστροφίας ὀξὺ πρὸς τὰς ἀπαντήσεις</quote> <bibl n="Perseus:abo:tlg,0007,101:510f"><author>Plu.</author> 2.510f</bibl></cit>, cf. 975a, 
+cit
+<cit><quote lang="greek">εἰπεῖν τι</quote> <bibl n="Perseus:abo:tlg,0007,104:531b"><author>Plu.</author> 2.531b</bibl></cit>, cf. 533e; 
+
+greatscott29.xml in progress...
+
+foreign
+<foreign lang="greek">ἕωλόν ἐστι τὸ λέγειν</foreign> ib. 777b, cf. 
+
+greatscott30.xml in progress...
+
+
+greatscott31.xml in progress...
+
+
+greatscott32.xml in progress...
+
+cit
+<cit><quote lang="greek">τὸ ἡδόμενον</quote> <bibl n="Perseus:abo:tlg,0007,134:1025e"><author>Plu.</author> 2.1025e</bibl></cit>, 1101f: freq. in dat., 
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:163c"><author>Plu.</author> <title>[Symp.]</title> 2.163c</bibl>,935f. (Etym. dub., cf. 
+etym
+<etym lang="greek" opt="n">ἡμερίς</etym>), ib.451c,994a.
+bibl
+<bibl n="Perseus:abo:tlg,0007,094:451c">451c</bibl>,994a.
+
+greatscott33.xml in progress...
+
+foreign
+<foreign lang="greek">θαλειάζω</foreign> ib. 357e); 
+bibl
+<bibl n="Perseus:abo:tlg,0007,067:7a"><author>Plu.</author> <title>[Lib. educ.]</title> 2.7a</bibl>,15e. 
+
+greatscott34.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,067:0a"><author>Plu.</author> <title>[Lib. educ.]</title> 2.0a</bibl>, 965b.
+
+greatscott35.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:34f"><author>Id.</author> <title>[Aud.poet.]</title> 2.34e</bibl>, 729a; 
+
+greatscott36.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,078:138b"><author>Plu.</author> <title>[Coniug.]</title> 2.138b</bibl>,704f.
+
+greatscott37.xml in progress...
+
+
+greatscott38.xml in progress...
+
+foreign
+<foreign lang="greek">ἀσκήσει τὸ ἄλογον</foreign> ib. 459b. 
+
+greatscott39.xml in progress...
+
+foreign
+<foreign lang="greek">δένδρα τοῖς φυτοῖς</foreign> ib. 648c; 
+cit
+<cit><quote lang="greek">τοὺς νέους</quote> <bibl n="Perseus:abo:tlg,0007,081:207e"><author>Plu.</author> <title>[Apophth. reg.]</title> 2.207e</bibl></cit>, cf. 547b, etc.:—
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:40c"><author>Plu.</author> <title>[Aud.]</title> 2.40c</bibl>,682a; 
+foreign
+<foreign lang="greek">τὴν ψυχήν</foreign> ib. 780b; 
+
+greatscott40.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,075:100b"><author>Plu.</author> <title>[Virt. et vit.]</title> 2.100b</bibl>, 691f, 
+
+greatscott41.xml in progress...
+
+foreign
+<foreign lang="greek">φράσις</foreign> ib. 1011a. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,081:177a"><author>Plu.</author> <title>[Apophth. reg.]</title> 2.177a</bibl>, 509a. 
+
+greatscott42.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:45f"><author>Plu.</author> <title>[Aud.]</title> 2.45f</bibl>, 1117a, 
+
+greatscott43.xml in progress...
+
+i
+<i>speak laconically</i>, ib. 513a, etc.; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:66c"><author>Id.</author> <title>[Adul.]</title> 2.66c</bibl>, 1124b.
+bibl
+<bibl n="Perseus:abo:tlg,0007,081:182c"><author>Plu.</author> <title>[Apophth. reg.]</title> 2.182c</bibl>, 360d:—also 
+
+greatscott44.xml in progress...
+
+cit
+<cit><quote lang="greek">λιτὴ δίαιτα</quote> <bibl n="Perseus:abo:tlg,0007,112:668f"><author>Plu.</author> 2.668f</bibl></cit>, cf. 125d, etc.; 
+
+greatscott45.xml in progress...
+
+
+greatscott46.xml in progress...
+
+i
+<i>lyric poet</i>, of Pindar, ib. 120c; 
+
+greatscott47.xml in progress...
+
+cit
+<cit><quote lang="greek">μ. θύειν</quote> <bibl n="Perseus:abo:tlg,0007,095:464c"><author>Plu.</author> 2.464c</bibl></cit>, 672b, cf. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:18a"><author>Plu.</author> <title>[Aud.poet.]</title> 2.18a</bibl>, 810f.
+foreign
+<foreign lang="greek">τυραννικαὶ μ.</foreign> ib. 457b.
+bibl
+<bibl n="Perseus:abo:tlg,0007,077:129c"><author>Plu.</author> <title>[Sanit.]</title> 2.129c</bibl>, 171b, 
+
+greatscott48.xml in progress...
+
+cit
+<cit><quote lang="greek">τελεταί</quote> <bibl n="Perseus:abo:tlg,0007,067:10e"><author>Plu.</author> <title>[Lib. educ.]</title> 2.10e</bibl></cit>, cf. 996b; 
+
+greatscott49.xml in progress...
+
+foreign
+<foreign lang="greek">ν. οἴκων</foreign> ib. 517f. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,077:127a"><author>Plu.</author> <title>[Sanit.]</title> 2.127a</bibl>, 128d; 
+
+greatscott50.xml in progress...
+
+cit
+<cit><quote lang="greek">νηφάλια καὶ μελίσπονδα θύειν</quote> <bibl n="Perseus:abo:tlg,0007,095:464c"><author>Plu.</author> 2.464c</bibl></cit>, 672b; 
+foreign
+<foreign lang="greek">τῷ Διονύσῳ πολλάκις ν. θύομεν</foreign> ib. 132e (prov. of a frugal meal); 
+foreign
+<foreign lang="greek">ν. αὐλητικός</foreign> ib.1133d, cf. 138b, 
+bibl
+<bibl n="Perseus:abo:tlg,0094,002:1133d">1133d</bibl>, cf. 138b, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,076:110c"><author>Plu.</author> <title>[Cons. Apoll.]</title> 2.110c</bibl> (pl.), 788f, 
+
+greatscott51.xml in progress...
+
+foreign
+<foreign lang="greek">ἀδημονεῖν καὶ ξ.</foreign> ib. 601c, cf. 
+
+greatscott52.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:74e"><author>Plu.</author> <title>[Adul.]</title> 2.74e</bibl>, 421d, 723e, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,092:421d">421d</bibl>, 723e, 
+
+greatscott53.xml in progress...
+
+author
+<author>Plu.</author> 611a, 731f: hence, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,111:611a">611a</bibl>, 731f: hence, 
+cit
+<cit><quote lang="greek">αἱ κράσεις διʼ ὅλων</quote> <bibl n="Perseus:abo:tlg,0007,138:1078c"><author>Plu.</author> 2.1078c</bibl></cit>, cf. 1078d : in this signf. also without a Prep., 
+bibl
+<bibl n="Perseus:abo:tlg,0007,078:138e"><author>Plu.</author> <title>[Coniug.]</title> 2.138e</bibl>,648f, 
+
+greatscott54.xml in progress...
+
+i
+<i>most careful, close</i> life, ib. 128e ; 
+cit
+<cit><quote lang="greek">δαίμονες</quote> <bibl n="Perseus:abo:tlg,0007,120:830f"><author>Plu.</author> 2.830f</bibl></cit>, cf. 870c.
+i
+<i>ears</i> to hear, ib. 1113c: metaph., of spies in Persia, 
+
+greatscott55.xml in progress...
+
+
+greatscott56.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:59b"><author>Plu.</author> <title>[Adul.]</title> 2.59b</bibl>, 456e; 
+pos
+<pos opt="n">Subst.</pos>, ib. 504d, cf. 
+
+greatscott57.xml in progress...
+
+cit
+<cit><quote lang="greek">παρακόπτων</quote> <bibl n="Perseus:abo:tlg,0007,129:963e"><author>Plu.</author> 2.963e</bibl></cit>, 1123f; 
+cit
+<cit><quote lang="greek">π. πρὸς τὴν ἀπορίαν</quote> <bibl n="Perseus:abo:tlg,0007,091:395f"><author>Plu.</author> 2.395f</bibl></cit>, cf. 929f, 
+i
+<i>swim past</i>, Poet. ap. eund.2.90d : metaph., 
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:162a"><author>Plu.</author> <title>[Symp.]</title> 2.162a</bibl> ; of a city, ib. 399f ; of patricians and plebeians, 
+foreign
+<foreign lang="greek">μῆνες τῷ χειμῶνι -σκηνοῦντες</foreign> ib. 735d. 
+cit
+<cit><quote lang="greek">μεσότητας</quote> <bibl n="Perseus:abo:tlg,0007,134:1020a"><author>Plu.</author> 2.1020a</bibl></cit>, 1022c.
+i
+<i>strain, exert</i>, it, ib. 623b, cf. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,081:183d"><author>Plu.</author> <title>[Apophth. reg.]</title> 2.183d</bibl>, 534c.
+
+greatscott58.xml in progress...
+
+i
+<i>guide</i>-books, ib. 724d; 
+i
+<i>cover oneself all round</i>, ib. 51d, etc. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:43d"><author>Plu.</author> <title>[Aud.]</title> 2.43d</bibl>,52d,al. 
+foreign
+<foreign lang="greek">νῶς</foreign> ib. 1100a.
+
+greatscott59.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,078:144d"><author>Plu.</author> <title>[Coniug.]</title> 2.144d</bibl>, 167c.
+cit
+<cit><quote lang="greek">εἰς ἀπάθειαν</quote> <bibl n="Perseus:abo:tlg,0007,080:165b"><author>Plu.</author> <title>[Superst.]</title> 2.165b</bibl></cit>, cf. 546c :—
+cit
+<cit><quote lang="greek">π. καὶ ὀξύς</quote> <bibl n="Perseus:abo:tlg,0007,077:132d"><author>Id.</author> <title>[Sanit.]</title> 2.132d</bibl></cit>; of the sun, ib. 920c, cf. 653f: 
+bibl
+<bibl n="Perseus:abo:tlg,0007,126:920c">920c</bibl>, cf. 653f: 
+cit
+<cit><quote lang="greek">τὸ π.</quote> <i>overpowering effect,</i> <bibl n="Perseus:abo:tlg,0007,112:693b"><author>Plu.</author> 2.693b</bibl></cit>, cf. 367c, 735d (cj.). 
+bibl
+<bibl n="Perseus:abo:tlg,0007,089:367c">367c</bibl>, 735d (cj.). 
+i
+<i>breathing with which a vowel is pronounced,</i> ib. 1009e (pl.), 
+
+greatscott60.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,076:105b"><author>Plu.</author> <title>[Cons. Apoll.]</title> 2.105b</bibl>, cf. 25d, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,080:167e"><author>Plu.</author> <title>[Superst.]</title> 2.167e</bibl>,734a.
+cit
+<cit><quote lang="greek">ψαλτήρια</quote> <bibl n="Perseus:abo:tlg,0007,119:827a"><author>Plu.</author> 2.827a</bibl></cit>, cf. 973c, 
+cit
+<cit><quote lang="greek">αὐλῶν</quote> <bibl n="Perseus:abo:tlg,0094,002:1141c"><author>Plu.</author> 2.1141c</bibl></cit>, cf. 674f; 
+
+greatscott61.xml in progress...
+
+cit
+<cit><quote lang="greek">διαμάχονται περὶ τοῦ λευκὸν ἢ μὴ λευκὸν εἶναι τὸ π.</quote> <bibl n="Perseus:abo:tlg,0007,140:1109d"><author>Plu.</author> 2.1109d</bibl></cit>, cf. 1112d; 
+foreign
+<foreign lang="greek">π. καὶ προαναφωνῆσαι τὰ τοῦ Ἐμπεδοκλέους</foreign> ib. 996b; of masters, 
+gramGrp
+<gramGrp opt="n"><gram type="voice" opt="n">Med.</gram></gramGrp>, ib. 1078f. 
+
+greatscott62.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:71e"><author>Plu.</author> <title>[Adul.]</title> 2.71e</bibl>, 812e; 
+gramGrp
+<gramGrp opt="n"><gram type="voice" opt="n">Pass.</gram></gramGrp>, ib. 911e.
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:43e"><author>Plu.</author> <title>[Aud.]</title> 2.43e</bibl>, 592f, 
+i
+<i>associate closely with</i>, ib. 51f,490d,672f,754c; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:51f">51f</bibl>,490d,672f,754c; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,097:490d">490d</bibl>,672f,754c; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,112:672f">672f</bibl>,754c; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:42f"><author>Plu.</author> <title>[Aud.]</title> 2.42f</bibl>, 48a, 669f.
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:48a">48a</bibl>, 669f.
+gramGrp
+<gramGrp opt="n"><gram type="voice" opt="n">Pass.</gram></gramGrp>), 697d; also 
+cit
+<cit><quote lang="greek">αὑτῷ δείματα καὶ φόβους</quote> <bibl n="Perseus:abo:tlg,0007,080:168a"><author>Plu.</author> <title>[Superst.]</title> 2.168a</bibl></cit>, cf. 547c.
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:55a"><author>Plu.</author> <title>[Adul.]</title> 2.55a</bibl>,74d; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,077:137c"><author>Plu.</author> <title>[Sanit.]</title> 2.137c</bibl> with 141b, al.
+foreign
+<foreign lang="greek">εὑρησιλογίαις</foreign> ib. 28a; 
+
+greatscott63.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:150d"><author>Plu.</author> <title>[Symp.]</title> 2.150d</bibl>, 407b; so 
+
+greatscott64.xml in progress...
+
+
+greatscott65.xml in progress...
+
+
+greatscott66.xml in progress...
+
+
+greatscott67.xml in progress...
+
+cit
+<cit><quote lang="greek">ῥ. ποιεῖν ἐν δήμῳ</quote> <bibl n="Perseus:abo:tlg,0007,117:789d"><author>Plu.</author> 2.789d</bibl></cit>, cf. 791a: prov., 
+cit
+<cit><quote lang="greek">ἐν εἰδώλοις καὶ σκιαῖς</quote> <bibl n="Perseus:abo:tlg,0007,071:80f"><author>Id.</author> <title>[Profect.]</title> 2.80f</bibl></cit>; of food eaten without an appetite, ib. 2.664a; 
+foreign
+<foreign lang="greek">ποικιλία</foreign> ib.1138b, cf. 1144d; 
+bibl
+<bibl n="Perseus:abo:tlg,0094,002:1138b">1138b</bibl>, cf. 1144d; 
+
+greatscott68.xml in progress...
+
+cit
+<cit><quote lang="greek">τῇ σαρκὶ καὶ τοῖς ταύτης πάθεσι</quote> <bibl n="Perseus:abo:tlg,0007,076:107f"><author>Plu.</author> <title>[Cons. Apoll.]</title> 2.107f</bibl></cit>, cf. 101b; freq. in 
+
+greatscott69.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:148a"><author>Plu.</author> <title>[Symp.]</title> 2.148a</bibl>, 735f; 
+cit
+<cit><quote lang="greek">τὰ λαμπρὰ τῇ σκιᾷ τρανότερα ποιοῦσι</quote> <bibl n="Perseus:abo:tlg,0007,123:863e"><author>Plu.</author> 2.863e</bibl></cit>, cf. 407a, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:43f"><author>Plu.</author> <title>[Aud.]</title> 2.43f</bibl>, cf. 378f.
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:42a"><author>Plu.</author> <title>[Aud.]</title> 2.42a</bibl>, 545c.
+cit
+<cit><quote lang="greek">πρὸς δόξαν</quote> <bibl n="Perseus:abo:tlg,0007,139:1100a"><author>Plu.</author> 2.1100a</bibl></cit>, cf. 585c; 
+
+greatscott70.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,076:117e"><author>Plu.</author> <title>[Cons. Apoll.]</title> 2.117e</bibl>, 1084b, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:60a"><author>Plu.</author> <title>[Adul.]</title> 2.60a</bibl>, 668a, etc.
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:59f"><author>Plu.</author> <title>[Adul.]</title> 2.59f</bibl>, 461e:—at Sparta reeds were used, but generally the 
+foreign
+<foreign lang="greek">τῆς ἀνδρείας</foreign> ib. 988d.
+cit
+<cit><quote lang="greek">γνώμην ἐφʼ ὃ δεῖ</quote> <bibl n="Perseus:abo:tlg,0007,115:778f"><author>Plu.</author> 2.778f</bibl></cit>, cf. 446b.
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:149b"><author>Plu.</author> <title>[Symp.]</title> 2.149b</bibl>,503a, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,081:206d"><author>Plu.</author> <title>[Apophth. reg.]</title> 2.206d</bibl>,467d. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:52b"><author>Plu.</author> <title>[Adul.]</title> 2.52b</bibl>, 97a, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,073:97a"><author>Plu.</author> <title>[Mult.]</title> 2.97a</bibl>, 173d, 
+foreign
+<foreign lang="greek">συντυχ-</foreign> in 611a; 
+
+greatscott71.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,073:97a"><author>Plu.</author> <title>[Mult.]</title> 2.97a</bibl>, 124c.
+abbr
+<abbr>=</abbr> 1032b.
+bibl
+<bibl n="Perseus:abo:tlg,0007,072:89d"><author>Plu.</author> <title>[Util.]</title> 2.89d</bibl>, 638e; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:157d"><author>Plu.</author> <title>[Symp.]</title> 2.157d</bibl>, 704d; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,071:75b"><author>Plu.</author> <title>[Profect.]</title> 2.75b</bibl>,76b, 
+foreign
+<foreign lang="greek">τισι</foreign> ib. 97a, cf. 
+foreign
+<foreign lang="greek">τοῖς ἀνθρωπίνοις ἤθεσιν</foreign> ib. 975f:—
+foreign
+<foreign lang="greek">ἡ συνημμένων νήτη</foreign> ib. 1137c. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,073:97a"><author>Plu.</author> <title>[Mult.]</title> 2.97a</bibl>, 200c.
+cit
+<cit><quote lang="greek">ἑαυτὸν ἅπασιν</quote> <bibl n="Perseus:abo:tlg,0007,070:52e"><author>Plu.</author> <title>[Adul.]</title> 2.52e</bibl></cit>, cf. 51d, 
+cit
+<cit><quote lang="greek">τῇ μορφῇ τὴν ἀρετήν</quote> <bibl n="Perseus:abo:tlg,0007,087:335b"><author>Plu.</author> 2.335b</bibl></cit>, cf. 25c; 
+
+greatscott72.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,077:137d"><author>Plu.</author> <title>[Sanit.]</title> 2.137d</bibl>,298a:—
+i
+<i>equal in running</i>, ib. 298a; 
+author
+<author>Plu.</author> 1092d (pl.).
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:56b"><author>Plu.</author> <title>[Adul.]</title> 2.56b</bibl>,63a.
+author
+<author>Plu.</author> 1037b.
+cit
+<cit><quote lang="greek">ταῦτα συνεπισκόπει καὶ αὐτός</quote> <bibl n="Perseus:abo:tlg,0007,071:83e"><author>Plu.</author> <title>[Profect.]</title> 2.83e</bibl></cit>, cf. 714c; 
+author
+<author>Plu.</author> 728c.
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:22f"><author>Plu.</author> <title>[Aud.poet.]</title> 2.22f</bibl>, cf.ib.c, 1113a; 
+foreign
+<foreign lang="greek">ποιητικὴν μουσικῇ -ομένην</foreign> ib. 744f; 
+cit
+<cit><quote lang="greek">τὴν κοινότητα συνορᾶν</quote> <bibl n="Perseus:abo:tlg,0007,068:34c"><author>Plu.</author> <title>[Aud.poet.]</title> 2.34c</bibl></cit>, cf. 950d, 977e, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,127:950d">950d</bibl>, 977e, 
+foreign
+<foreign lang="greek">πρός τινας</foreign> ib. 100f; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,067:10c"><author>Plu.</author> <title>[Lib. educ.]</title> 2.10c</bibl>,550e; 
+cit
+<cit><quote lang="greek">τοῦ πνεύματος</quote> <bibl n="Perseus:abo:tlg,0007,077:127d"><author>Plu.</author> <title>[Sanit.]</title> 2.127d</bibl></cit>, cf. 654a, 
+foreign
+<foreign lang="greek">πυκινὸς νόος</foreign>, ib.408e,511b; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,091:408e">408e</bibl>,511b; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:44a"><author>Plu.</author> <title>[Aud.]</title> 2.44a</bibl>, 631c, 
+
+greatscott73.xml in progress...
+
+
+greatscott74.xml in progress...
+
+
+greatscott75.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:32e"><author>Plu.</author> <title>[Aud.poet.]</title> 2.32e</bibl>, 138d (both 
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:52c"><author>Plu.</author> <title>[Adul.]</title> 2.52c</bibl>, 352c (pl.).
+bibl
+<bibl n="Perseus:abo:tlg,0007,080:171b"><author>Plu.</author> <title>[Superst.]</title> 2.171b</bibl>,338c.
+cit
+<cit><quote lang="greek">χύτρας τύπον ἀρθείσης ἐν σποδῷ μὴ ἀπολιπεῖν, ἀλλὰ συγχεῖν</quote> <bibl n="Perseus:abo:tlg,0007,112:727c"><author>Plu.</author> 2.727c</bibl></cit>, cf. 982b, 
+
+greatscott76.xml in progress...
+
+
+greatscott77.xml in progress...
+
+cit
+<cit><quote lang="greek">ὑγιαίνων καὶ τεταγμένος βίος</quote> <i>healthy,</i> <bibl n="Perseus:abo:tlg,0007,067:5a"><author>Plu.</author> <title>[Lib. educ.]</title> 2.5a</bibl></cit>, cf. 43b; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,074:98e"><author>Plu.</author> <title>[Fort.]</title> 2.98e</bibl>, 6b; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,068:19d"><author>Plu.</author> <title>[Aud.poet.]</title> 2.19d</bibl>, 827a.
+bibl
+<bibl n="Perseus:abo:tlg,0007,067:12b"><author>Plu.</author> <title>[Lib. educ.]</title> 2.12b</bibl>, 155a, al. 
+
+greatscott78.xml in progress...
+
+cit
+<cit><quote lang="greek">λαμβάνειν ἀναποδείκτους ὑ.</quote> <bibl n="Perseus:abo:tlg,0007,112:720f"><author>Plu.</author> 2.720f</bibl></cit>, cf. 721d; 
+cit
+<cit><quote lang="greek">προθυμίας τὰς ἐπιθυμίας ὑ.</quote> <bibl n="Perseus:abo:tlg,0007,094:449a"><author>Plu.</author> 2.449a</bibl></cit>, cf. 56d, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,067:1b"><author>Plu.</author> <title>[Lib. educ.]</title> 2.1b</bibl>, 65a: cf. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,081:193e"><author>Plu.</author> <title>[Apophth. reg.]</title> 2.193e</bibl>, 530a; 
+bibl
+<bibl n="Perseus:abo:tlg,0007,079:149a"><author>Plu.</author> <title>[Symp.]</title> 2.149a</bibl>, 782d, 
+
+greatscott79.xml in progress...
+
+
+greatscott80.xml in progress...
+
+foreign
+<foreign lang="greek">τὸ φ.</foreign> ib. 432c. 
+cit
+<cit><quote lang="greek">φ. ἐν τῷ φιλοσοφεῖν</quote> <bibl n="Perseus:abo:tlg,0007,071:77d"><author>Plu.</author> <title>[Profect.]</title> 2.77d</bibl></cit>, cf. 47c; 
+gramGrp
+<gramGrp opt="n"><gram type="voice" opt="n">Pass.</gram></gramGrp>), 978c: 
+cit
+<cit><quote lang="greek">ἐπιστόλιον αὐτοῦ τοιοῦτον φέρεται</quote> <bibl n="Perseus:abo:tlg,0007,118:808a"><author>Plu.</author> 2.808a</bibl></cit>, cf. 209e, 832d, 833c, al., 
+bibl
+<bibl n="Perseus:abo:tlg,0007,082:209e">209e</bibl>, 832d, 833c, al., 
+bibl
+<bibl n="Perseus:abo:tlg,0007,120:832d">832d</bibl>, 833c, al., 
+foreign
+<foreign lang="greek">τὰς μίξεις τῶν χρωμάτων οἱ ζωγράφοι φθορὰς ὀνομάζουσι</foreign> ib.725c, cf. 393c. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,112:725c">725c</bibl>, cf. 393c. 
+foreign
+<foreign lang="greek">φιλίτια</foreign> all codd. in 2.714b, 
+foreign
+<foreign lang="greek">φιλέστιον</foreign> in 2.697e), 
+bibl
+<bibl n="Perseus:abo:tlg,0007,078:140c"><author>Plu.</author> <title>[Coniug.]</title> 2.140c</bibl>,631a, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,067:12c"><author>Plu.</author> <title>[Lib. educ.]</title> 2.12c</bibl>, 21c, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,069:40a"><author>Plu.</author> <title>[Aud.]</title> 2.40a</bibl>, 44a, 
+cit
+<cit><quote lang="greek">τὸ φ.</quote> <bibl n="Perseus:abo:tlg,0007,070:61d"><author>Plu.</author> <title>[Adul.]</title> 2.61d</bibl></cit>, 1026d. 
+cit
+<cit><quote lang="greek">φιλολόγῳ ὑποκατακλίνεσθαι φιλομαθῆ</quote> <bibl n="Perseus:abo:tlg,0007,112:618e"><author>Plu.</author> 2.618e</bibl></cit>, cf. 419d; opp. 
+cit
+<cit><quote lang="greek">τὸ φ.</quote> <bibl n="Perseus:abo:tlg,0007,112:612d"><author>Plu.</author> 2.612d</bibl></cit>, 632e. 
+bibl
+<bibl n="Perseus:abo:tlg,0007,078:142b"><author>Plu.</author> <title>[Coniug.]</title> 2.142b</bibl>, 2.1050c, etc.: c. 
+
+greatscott81.xml in progress...
+
+cit
+<cit><quote lang="greek">τοῖς συνοῦσι φ.</quote> <bibl n="Perseus:abo:tlg,0007,095:456e"><author>Plu.</author> 2.456e</bibl></cit>, cf. 44a, etc.; 
+cit
+<cit><quote lang="greek">ἡ τοῦ Σωκράτους φ.</quote> <bibl n="Perseus:abo:tlg,0007,076:106b"><author>Plu.</author> <title>[Cons. Apoll.]</title> 2.106b</bibl></cit>, cf. 330f, etc.; of 
+
+greatscott82.xml in progress...
+
+cit
+<cit><quote lang="greek">τὸ χαῖρον τῆς ψυχῆς</quote> <bibl n="Perseus:abo:tlg,0007,077:136c"><author>Plu.</author> <title>[Sanit.]</title> 2.136c</bibl></cit>, 1089e. 
+foreign
+<foreign lang="greek">ὁ τύπος τῶν χ.</foreign> ib.577f, cf. 1120f, 
+bibl
+<bibl n="Perseus:abo:tlg,0007,109:577f">577f</bibl>, cf. 1120f, 
+foreign
+<foreign lang="greek">καθάπερ βέλη τὰ πράγματα</foreign> ib. 825f; 
+cit
+<cit><quote lang="greek">τὸ φιλόνικον</quote> <bibl n="Perseus:abo:tlg,0007,072:92a"><author>Plu.</author> <title>[Util.]</title> 2.92a</bibl></cit>, cf. 825f:—
+
+greatscott83.xml in progress...
+
+foreign
+<foreign lang="greek">μέρος ἥμισυ</foreign> ib. 968d; 
+foreign
+<foreign lang="greek">καταλογάδην τοὺς χ. λέγειν</foreign> ib. 397d; 
+foreign
+<foreign lang="greek">τῆς γῆς</foreign> ib. 925b, 
+
+greatscott84.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,070:67f"><author>Plu.</author> <title>[Adul.]</title> 2.67f</bibl>, 223f, cf. 
+cit
+<cit><quote lang="greek">ἐνδίδωσι τὸ σῶμα καὶ περιορᾷ ψαυόμενον ὑπὸ τῶν παρατρεχόντων</quote> <bibl n="Perseus:abo:tlg,0007,129:978b"><author>Plu.</author> 2.978b</bibl></cit>, cf. 951d (if the comma be placed before, not after, 
+cit
+<cit><quote lang="greek">αἱ τῶν μασχαλῶν ψ.</quote> <bibl n="Perseus:abo:tlg,0007,077:125c"><author>Plu.</author> <title>[Sanit.]</title> 2.125c</bibl></cit>, cf. 547b (pl.).
+foreign
+<foreign lang="greek">τραχύτης,</foreign> ib. 979a; opp. 
+
+greatscott85.xml in progress...
+
+
+greatscott86.xml in progress...
+
+bibl
+<bibl n="Perseus:abo:tlg,0007,077:131c"><author>Plu.</author> <title>[Sanit.]</title> 2.131c</bibl>, 133d; of a person, 
+cit
+<cit><quote lang="greek">διὰ τῶν ὤτων</quote> <bibl n="Perseus:abo:tlg,0007,069:38c"><author>Plu.</author> <title>[Aud.]</title> 2.38c</bibl></cit>, cf. 145b: c. 

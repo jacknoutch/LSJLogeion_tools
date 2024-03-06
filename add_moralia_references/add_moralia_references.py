@@ -4,6 +4,7 @@ from utilities import *
 # COLLECTION OF REFERENCES.
 
 # TODO: Abstract the collection functions to create single-action functions.
+
 def get_plutarch_elements(root: etree.Element) -> list[etree.Element]:
     """Returns a list of those elements in the root which contain a valid, unwrapped stephanus reference in its tail
     node, and which is nearest, preceding <author> element refers to Plutarch.
@@ -32,6 +33,9 @@ def get_plutarch_elements(root: etree.Element) -> list[etree.Element]:
 def has_unwrapped_reference(node: etree.Element, author: str) -> bool:
 
     if not author == "Plu.":
+        return False
+    
+    if node.tag == "title":
         return False
     
     bibl_ancestor = [e for e in node.iterancestors() if e.tag == "bibl"]
@@ -80,10 +84,5 @@ def wrap_bibl_element(element: etree.Element, plutarch_rows: list) -> etree.Elem
     new_bibl_element.tail = separated_tail[2]
         
     parent.insert(index, new_bibl_element)
-
-    print("-----------")
-    etree_print(parent)
-    etree_print(element)
-    etree_print(new_bibl_element)
     
     return new_bibl_element
