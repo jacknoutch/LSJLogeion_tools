@@ -13,7 +13,11 @@ def get_plutarch_elements(root: etree.Element) -> list[etree.Element]:
     # Loop through the elements, keeping a track of the last <author> tag
     last_author = {"author": None}
 
+    # A custom traversal is required due to the nature of searching for references in the tail of elements.
     def traverse(node: etree.Element, cache, result: list[etree.Element]):
+        """This traversal is called "depth-first post-order" and ensures any author elements are checked first where they 
+        are children of elements with references in the tail node.
+        """
         if node is None:
             return result
         
