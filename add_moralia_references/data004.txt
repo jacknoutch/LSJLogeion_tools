@@ -1,4 +1,0 @@
-= συρφετός 2a, 
-<sense id="n101329.0" n="" level="1" opt="n">= συρφετός 2a, <bibl n="Perseus:abo:tlg,0019,004:673" default="NO" valid="yes"><author>Ar.</author> <title>V.</title> 673</bibl> (anap.), <bibl n="Perseus:abo:tlg,0062,046:4" default="NO"><author>Luc.</author> <title>Lex.</title> 4</bibl>, etc. </sense>
-= τελεστής 2a, 
-<sense id="n102972.0" n="" level="1" opt="n">= τελεστής 2a, <cit><quote lang="greek">τᾶς Μεγάλας Ματρός</quote> <title>IG</title> 4.757<hi rend="ital">B</hi>10</cit> (<placeName>Troezen</placeName>).</sense>

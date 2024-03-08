@@ -1,6 +1,0 @@
-author
-bibl
-cit
-foreign
-gramGrp
-i
