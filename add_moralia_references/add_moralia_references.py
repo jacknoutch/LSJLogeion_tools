@@ -6,8 +6,8 @@ from utilities import *
 # TODO: Abstract the collection functions to create single-action functions.
 
 def get_plutarch_elements(root: etree.Element) -> list[etree.Element]:
-    """Returns a list of those elements in the root which contain a valid, unwrapped stephanus reference in its tail
-    node, and which is nearest, preceding <author> element refers to Plutarch.
+    """Returns a list of those elements in the root which meet the contain at least one valid, unwrapped stephanus reference
+    in its tail node, and whose nearest, preceding <author> element refers to Plutarch.
     """
 
     # Loop through the elements, keeping a track of the last <author> tag
@@ -30,20 +30,26 @@ def get_plutarch_elements(root: etree.Element) -> list[etree.Element]:
 
     return traverse(root, last_author, [])
 
-def has_unwrapped_reference(node: etree.Element, author: str) -> bool:
+def has_unwrapped_reference(node: etree.Element, last_author: str) -> bool:
+    """Defines the conditions for what is deemed a valid stephanus requiring wrapping.
+    """
 
-    if not author == "Plu.":
+    # only elements whose nearest, preceding <author> element refers to Plutarch are valid
+    if not last_author == "Plu.":
         return False
     
+    # <title> elements with apparent stephanus tend actually to be inscriptions
     if node.tag == "title":
         return False
     
+    # only references which are nor already part of <bibl> elements are valid for wrapping
     bibl_ancestor = [e for e in node.iterancestors() if e.tag == "bibl"]
     
     if len(bibl_ancestor) > 0:
-        assert(len(bibl_ancestor) == 1)
+        assert(len(bibl_ancestor) == 1) # there should never be more than one <bibl> ancestor
         return False
     
+    # references in the tail only; references in the text node are invalid
     if not has_reference(node.tail):
         return False
 
@@ -51,7 +57,11 @@ def has_unwrapped_reference(node: etree.Element, author: str) -> bool:
 
 # INSERTION OF NEW ELEMENTS
 
-def wrap_references(element: etree.Element, new_elements: list) -> bool:
+def wrap_references(element: etree.Element, new_elements: list[etree.Element]=[]) -> list[etree.Element]:
+    """Wrap all stephanus references in the tail of a given element with an appropriate <bibl> tag.
+
+    Returns a list of the newly wrapped <bibl> references.
+    """
 
     plutarch_rows = load_moralia_tlg_csv()
 
@@ -65,6 +75,11 @@ def wrap_references(element: etree.Element, new_elements: list) -> bool:
     return new_elements
 
 def wrap_bibl_element(element: etree.Element, plutarch_rows: list) -> etree.Element:
+    """Wraps the first stephanus reference in the tail of a given element in a new, appropriate <bibl> element.
+
+    Returns the new <bibl> element.
+    """
+
     parent = element.getparent()
     index = parent.index(element) + 1 # +1 because we will insert *after* the existing author element
     tail = element.tail

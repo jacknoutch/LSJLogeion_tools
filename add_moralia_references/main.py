@@ -61,7 +61,7 @@ def main():
     
             # Wrap the references in <bibl> elements
             for element in plutarch_elements:
-                new_elements = wrap_references(element, [])
+                new_elements = wrap_references(element)
                 # TODO: does wrap_reference return False if it fails? it needs to for the following conditional...
                 if new_elements:
                     references_added += len(new_elements)

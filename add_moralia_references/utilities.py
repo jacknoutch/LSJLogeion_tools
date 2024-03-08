@@ -14,7 +14,7 @@ def print_headword(element: etree.Element) -> None:
     lexicon."""
     div2 = [ancestor for ancestor in element.iterancestors() if ancestor.tag == "div2"]
 
-    if len(div2) >= 0:
+    if len(div2) == 0:
         return
     
     head = div2[0].find(".//head")
@@ -46,21 +46,17 @@ def has_reference(text: str) -> bool:
     return True
 
 def get_string_reference(text: str, maxsplit: int=0) -> list[str]:
+    """Returns a list of stephanus references in string format from the given string.
+
+    maxsplit optionally sets a limit for the numberof references returned and defaults to no limit.
+    """
     re_reference = r"(\b[1-2]\.[1-9]\d{0,3}[a-f]\b|(?<!\d\.)\b[1-9]\d{0,3}[a-f])\b"
     matches = re.split(re_reference, text, maxsplit)
 
     return matches
 
-def get_simple_references(element: etree.Element) -> list[str]:
-    element_text = "".join(element.itertext()) + element.tail
-
-    re_reference = r"(\b[1-2]\.[1-9]\d{0,3}[a-f]\b|(?<!\d\.)\b[1-9]\d{0,3}[a-f])\b"
-    matches = re.split(re_reference, element_text)
-
-    return matches[1::2]
-
-
 def etree_print(element: etree.Element) -> None:
+    """A quicker method for printing the string of an etree.Element to the terminal."""
     print(etree.tostring(element, encoding="unicode"))
 
 # INSERTION OF NEW ELEMENTS
@@ -85,6 +81,7 @@ def get_plutarch_rows_from_csv(source):
         return csv_rows
 
 def clean_stephanus(raw_stephanus: str) -> str:
+    """"""
     # TODO: raw_stephanus could be, e.g. "1.234a, 345b"  and this function not raise an exception
     if not isinstance(raw_stephanus, str):
         raise TypeError(f"raw_stephanus is of the wrong type: {type(raw_stephanus)}")
@@ -101,13 +98,15 @@ def clean_stephanus(raw_stephanus: str) -> str:
 
     return match.group()
 
-def get_tlg_reference(stephanus_reference: str, csv_rows: list) -> tuple:
-
+def get_tlg_reference(stephanus_reference: str, csv_rows: list[list[str]]) -> tuple[str, str]:
+    """
+    """
+    
     for row in csv_rows:
-        tlg_author = row[7]
-        tlg_work = row[8]
+        author = row[7]
+        work = row[8]
         if is_larger_stephanus(stephanus_reference, row[6]): # row[6] is the stephanus reference representing the last section of the work
-            return (tlg_author, tlg_work)
+            return (author, work)
     
     raise ValueError(f"stephanus_reference ({stephanus_reference}) is too large for Plutarch's Moralia")
 
@@ -130,13 +129,8 @@ def is_larger_stephanus(ref1: str, ref2: str) -> bool:
 
     return page1 < page2
 
-class Stephanus(str):
-    def __init__(self, stephanus: str):
-        self.text = stephanus
-        self.page, self.section = split_stephanus(stephanus)
-
 def split_stephanus(stephanus: str) -> tuple[int, str]:
-    """Split a simple stephanus reference to return a tuple of the page and section.
+    """Split a simple stephanus reference str to return a tuple of the page and section.
 
     Argument 'stephanus' must consist of the reference only. Whitespace is acceptable.
     
