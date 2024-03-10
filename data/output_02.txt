@@ -1,0 +1,439 @@
+
+greatscott02.xml in progress...
+
+greatscott02.xml done!
+0 references added
+
+greatscott03.xml in progress...
+
+greatscott03.xml done!
+0 references added
+
+greatscott04.xml in progress...
+
+greatscott04.xml done!
+0 references added
+
+greatscott05.xml in progress...
+
+<sense id="n7798.0" n="" level="1" opt="n"><i>scrape up,</i> <bibl n="Perseus:abo:tlg,0007,125:913e"><author>Plu.</author> 2.913e</bibl>; <foreign lang="greek">ἀὴρ ἀναχαράσσει ἰόν</foreign> air <i>causes the roughness of</i> rust, ib. <bibl n="Perseus:abo:tlg,0007,091:396a">396a</bibl>, cf. <bibl n="Perseus:abo:tlg,0007,095:454c">454c</bibl>.</sense>
+greatscott05.xml done!
+1 references added
+
+greatscott06.xml in progress...
+
+<sense id="n8474.0" n="" level="1" opt="n"><i>loveless,</i> <cit><quote lang="greek">ἔρωτες</quote> <bibl n="Perseus:abo:tlg,0612,001:7:133" default="NO"><author>D.Chr.</author> 7.133</bibl></cit>, cf. <bibl n="Perseus:abo:tlg,0007,091:406a"><author>Plu.</author> 2.406a</bibl>, etc.; <foreign lang="greek">ἀ. κοινωνία, ὁμιλία,</foreign> ib.<bibl n="Perseus:abo:tlg,0007,113:752c">752c</bibl>,<bibl n="Perseus:abo:tlg,0007,113:756e">756e</bibl>; <foreign lang="greek">τὸ ἀ. ἑτέρων</foreign> <i>want of love for . .,</i> ib.<bibl n="Perseus:abo:tlg,0007,112:634b">634b</bibl>; <cit><quote lang="greek">βίος</quote> <bibl n="Perseus:abo:tlg,7000,001:12:18" default="NO"><title>AP</title> 12.18</bibl></cit> (<author>Alph.</author>). </sense>
+greatscott06.xml done!
+2 references added
+
+greatscott07.xml in progress...
+
+greatscott07.xml done!
+2 references added
+
+greatscott08.xml in progress...
+
+greatscott08.xml done!
+2 references added
+
+greatscott09.xml in progress...
+
+greatscott09.xml done!
+2 references added
+
+greatscott10.xml in progress...
+
+greatscott10.xml done!
+2 references added
+
+greatscott11.xml in progress...
+
+greatscott11.xml done!
+2 references added
+
+greatscott12.xml in progress...
+
+greatscott12.xml done!
+2 references added
+
+greatscott13.xml in progress...
+
+greatscott13.xml done!
+2 references added
+
+greatscott14.xml in progress...
+
+greatscott14.xml done!
+2 references added
+
+greatscott15.xml in progress...
+
+greatscott15.xml done!
+2 references added
+
+greatscott16.xml in progress...
+
+<sense id="n23229.0" n="" level="1" opt="n"><i>possessed by a demon,</i> <cit><quote lang="greek">ζῷον</quote> <bibl n="Perseus:abo:tlg,0007,089:362f"><author>Plu.</author> 2.362f</bibl></cit>: of things, <i>sent by a demon,</i> <foreign lang="greek">οὐ θεῖον, ἀλλὰ δ.</foreign> ib.<bibl n="Perseus:abo:tlg,0007,131:996c">996c</bibl>, cf.<bibl n="Perseus:abo:tlg,0007,095:458c">458c</bibl>; <foreign lang="greek">δ. δύναμις</foreign> ib.<bibl n="Perseus:abo:tlg,0007,089:363a">363a</bibl>.</sense>
+greatscott16.xml done!
+3 references added
+
+greatscott17.xml in progress...
+
+greatscott17.xml done!
+3 references added
+
+greatscott18.xml in progress...
+
+<sense n="2" id="n27385.2" level="3" opt="n"> <i>weak spot, flaw</i> in metal, <bibl n="Perseus:abo:tlg,0059,007:267e"><author>Pl.</author> <title>Sph.</title> 267e</bibl>, <bibl n="Perseus:abo:tlg,1599,001:71:28" default="NO"><author>Ph.</author> <title>Bel.</title> 71.28</bibl>, <bibl n="Perseus:abo:tlg,0007,118:802b"><author>Plu.</author> 2.802b</bibl>: metaph., <foreign lang="greek">αἱ δ. τῆς ψυχῆς</foreign> ib. <bibl n="Perseus:abo:tlg,0007,112:715f">715f</bibl>, cf. <bibl n="Perseus:abo:tlg,0007,094:441d">441d</bibl>; ‘patchiness’, <bibl n="Perseus:abo:tlg,2000,001:5:2:1" default="NO"><author>Plot.</author> 5.2.1</bibl>; also, <i>concealed sense,</i> in oracles, <bibl n="Perseus:abo:tlg,0007,091:407c"><author>Plu.</author> 2.407c</bibl>. </sense>
+greatscott18.xml done!
+4 references added
+
+greatscott19.xml in progress...
+
+greatscott19.xml done!
+4 references added
+
+greatscott20.xml in progress...
+
+greatscott20.xml done!
+4 references added
+
+greatscott21.xml in progress...
+
+greatscott21.xml done!
+4 references added
+
+greatscott22.xml in progress...
+
+greatscott22.xml done!
+4 references added
+
+greatscott23.xml in progress...
+
+greatscott23.xml done!
+4 references added
+
+greatscott24.xml in progress...
+
+<sense n="II" id="n36766.2" level="2" opt="n"> intr., <i>weather the storm,</i> <bibl n="Perseus:abo:tlg,0007,030:15" default="NO"><author>Id.</author> <title>Pyrrh.</title> 15</bibl>: metaph., <cit><quote lang="greek">ἐν νοσήματι κατειλημμένος ἐ.</quote> <bibl n="Perseus:abo:tlg,0007,079:147c"><author>Id.</author> <title>[Symp.]</title> 2.147c</bibl></cit>; <cit><quote lang="greek">πρὸς τὴν ἀδηλότητα</quote> <bibl n="Perseus:abo:tlg,0007,066:9" default="NO"><author>Id.</author> <title>Oth.</title> 9</bibl></cit>: abs., <cit><quote lang="greek">ἐ. καὶ διωθεῖσθαι τὸ πάθος</quote> <bibl n="Perseus:abo:tlg,0007,094:446b"><author>Id.</author> 2.446b</bibl></cit>, cf. <bibl n="Perseus:abo:tlg,0007,106:541a">541a</bibl>, <bibl n="Perseus:abo:tlg,0007,107:550c">550c</bibl>. </sense>
+greatscott24.xml done!
+5 references added
+
+greatscott25.xml in progress...
+
+greatscott25.xml done!
+5 references added
+
+greatscott26.xml in progress...
+
+<sense id="n40492.0" n="" level="1" opt="n"><i>springing upon, assault</i>, <bibl n="Perseus:abo:tlg,0007,125:916d"><author>Plu.</author> 2.916d</bibl> (pl.): metaph., <foreign lang="greek">ὁρμαὶ καὶ -σεις</foreign> ib.<bibl n="Perseus:abo:tlg,0007,071:76c">76c</bibl>, etc.; of the male animal, ib.<bibl n="Perseus:abo:tlg,0007,113:768e">768e</bibl>, 1095a (pl.).</sense>
+greatscott26.xml done!
+6 references added
+
+greatscott27.xml in progress...
+
+greatscott27.xml done!
+6 references added
+
+greatscott28.xml in progress...
+
+greatscott28.xml done!
+6 references added
+
+greatscott29.xml in progress...
+
+greatscott29.xml done!
+6 references added
+
+greatscott30.xml in progress...
+
+greatscott30.xml done!
+6 references added
+
+greatscott31.xml in progress...
+
+greatscott31.xml done!
+6 references added
+
+greatscott32.xml in progress...
+
+<sense n="2" id="n46975.1" level="3" opt="n"> epith. of Dionysus, as patron of the <i>cultivated</i> vine (<etym lang="greek" opt="n">ἡμερίς</etym>), ib.<bibl n="Perseus:abo:tlg,0007,094:451c">451c</bibl>,<bibl n="Perseus:abo:tlg,0007,131:994a">994a</bibl>.</sense>
+greatscott32.xml done!
+7 references added
+
+greatscott33.xml in progress...
+
+greatscott33.xml done!
+7 references added
+
+greatscott34.xml in progress...
+
+greatscott34.xml done!
+7 references added
+
+greatscott35.xml in progress...
+
+greatscott35.xml done!
+7 references added
+
+greatscott36.xml in progress...
+
+greatscott36.xml done!
+7 references added
+
+greatscott37.xml in progress...
+
+greatscott37.xml done!
+7 references added
+
+greatscott38.xml in progress...
+
+greatscott38.xml done!
+7 references added
+
+greatscott39.xml in progress...
+
+greatscott39.xml done!
+7 references added
+
+greatscott40.xml in progress...
+
+greatscott40.xml done!
+7 references added
+
+greatscott41.xml in progress...
+
+greatscott41.xml done!
+7 references added
+
+greatscott42.xml in progress...
+
+greatscott42.xml done!
+7 references added
+
+greatscott43.xml in progress...
+
+greatscott43.xml done!
+7 references added
+
+greatscott44.xml in progress...
+
+greatscott44.xml done!
+7 references added
+
+greatscott45.xml in progress...
+
+greatscott45.xml done!
+7 references added
+
+greatscott46.xml in progress...
+
+greatscott46.xml done!
+7 references added
+
+greatscott47.xml in progress...
+
+greatscott47.xml done!
+7 references added
+
+greatscott48.xml in progress...
+
+greatscott48.xml done!
+7 references added
+
+greatscott49.xml in progress...
+
+greatscott49.xml done!
+7 references added
+
+greatscott50.xml in progress...
+
+<sense n="2" id="n71005.8" level="3" opt="n"> esp. a type of early <i>melody</i> created by Terpander for the lyre as an accompaniment to Epic texts, <cit><quote lang="greek">ν. ὄρθιος</quote> <bibl n="Perseus:abo:tlg,0016,001:1:24"><author>Hdt.</author> 1.24</bibl></cit>; <cit><quote lang="greek">ν. Βοιώτιος</quote> <bibl n="Perseus:abo:tlg,0011,008:966"><author>S.</author> <title>Fr.</title> 966</bibl></cit>; <cit><quote lang="greek">ν. κιθαρῳδικοί</quote> <bibl n="Perseus:abo:tlg,0019,009:1282"><author>Ar.</author> <title>Ra.</title> 1282</bibl></cit>, cf. <bibl n="Perseus:abo:tlg,0059,034:700d"><author>Pl.</author> <title>Lg.</title> 700d</bibl>, <bibl n="Perseus:abo:tlg,0086,034:1447b:26"><author>Arist.</author> <title>Po.</title> 1447b26</bibl>, <bibl n="Perseus:abo:tlg,0086,036:918b:13" default="NO"><title>Pr.</title> 918b13</bibl>, etc.; also for the flute, <cit><quote lang="greek">ν. αὐλῳδικός</quote> <bibl n="Perseus:abo:tlg,0094,002:1132d"><author>Plu.</author> 2.1132d</bibl></cit>; without sung text, <foreign lang="greek">ν. αὐλητικός</foreign> ib.<bibl n="Perseus:abo:tlg,0094,002:1133d">1133d</bibl>, cf. <bibl n="Perseus:abo:tlg,0007,078:138b">138b</bibl>, <bibl n="Perseus:abo:tlg,0542,001:4:79" default="NO"><author>Poll.</author> 4.79</bibl>; later, <i>composition including both words and melody,</i> e.g. <author>Tim.</author> <title>Pers.</title> </sense>
+greatscott50.xml done!
+8 references added
+
+greatscott51.xml in progress...
+
+greatscott51.xml done!
+8 references added
+
+greatscott52.xml in progress...
+
+greatscott52.xml done!
+8 references added
+
+greatscott53.xml in progress...
+
+greatscott53.xml done!
+8 references added
+
+greatscott54.xml in progress...
+
+greatscott54.xml done!
+8 references added
+
+greatscott55.xml in progress...
+
+greatscott55.xml done!
+8 references added
+
+greatscott56.xml in progress...
+
+greatscott56.xml done!
+8 references added
+
+greatscott57.xml in progress...
+
+greatscott57.xml done!
+8 references added
+
+greatscott58.xml in progress...
+
+greatscott58.xml done!
+8 references added
+
+greatscott59.xml in progress...
+
+<sense id="n83792.0" n="" level="1" opt="n"><i>striker, brawler,</i> <bibl n="Perseus:abo:tlg,0627,055:19" default="NO"><author>Hp.</author> <title>Ep.</title> 19</bibl> (pl., <abbr>v.</abbr> l. <foreign lang="greek">πρῆκται</foreign>), <bibl n="Perseus:abo:tlg,0086,009:1221b:14"><author>Arist.</author> <title>EE</title> 1221b14</bibl>, <bibl n="Perseus:abo:tlg,0031,015:3:3"><title>1 Ep.Ti.</title> 3.3</bibl>; <i>violent, fierce,</i> <cit><quote lang="greek">ἄνδρες π. καὶ μάχιμοι</quote> <bibl n="Perseus:abo:tlg,0007,060:30" default="NO"><author>Plu.</author> <title>Dio</title> 30</bibl></cit>, cf. <bibl n="Perseus:abo:tlg,0007,027:9" default="NO"><title>Phil.</title> 9</bibl>; of wine, <cit><quote lang="greek">π. καὶ ὀξύς</quote> <bibl n="Perseus:abo:tlg,0007,077:132d"><author>Id.</author> <title>[Sanit.]</title> 2.132d</bibl></cit>; of the sun, ib. <bibl n="Perseus:abo:tlg,0007,126:920c">920c</bibl>, cf. <bibl n="Perseus:abo:tlg,0007,112:653f">653f</bibl>: <gramGrp opt="n"><gram type="comp" opt="n">Sup.</gram></gramGrp> <cit><quote lang="greek">πληκτίστατος</quote> <bibl n="Perseus:abo:tlg,4083,001:1441:26" default="NO"><author>Eust.</author> 1441.26</bibl></cit>, <bibl n="Perseus:abo:tlg,4099,001:31:16" default="NO"><title>EM</title> 31.16</bibl>.</sense>
+greatscott59.xml done!
+9 references added
+
+greatscott60.xml in progress...
+
+greatscott60.xml done!
+9 references added
+
+greatscott61.xml in progress...
+
+greatscott61.xml done!
+9 references added
+
+greatscott62.xml in progress...
+
+<sense n="II" id="n88612.1" level="2" opt="n"> <i>associate closely with</i>, ib. <bibl n="Perseus:abo:tlg,0007,070:51f">51f</bibl>,<bibl n="Perseus:abo:tlg,0007,097:490d">490d</bibl>,672f,754c; <i>follow, imitate closely</i>, ib.<bibl n="Perseus:abo:tlg,0007,112:740f">740f</bibl>.</sense>
+greatscott62.xml done!
+10 references added
+
+greatscott63.xml in progress...
+
+greatscott63.xml done!
+10 references added
+
+greatscott64.xml in progress...
+
+greatscott64.xml done!
+10 references added
+
+greatscott65.xml in progress...
+
+greatscott65.xml done!
+10 references added
+
+greatscott66.xml in progress...
+
+greatscott66.xml done!
+10 references added
+
+greatscott67.xml in progress...
+
+<sense n="2" id="n92776.4" level="3" opt="n"> <i>of</i> or <i>for rhythm</i>, <foreign lang="greek">ποικιλία</foreign> ib.<bibl n="Perseus:abo:tlg,0094,002:1138b">1138b</bibl>, cf. <bibl n="Perseus:abo:tlg,0094,002:1144d">1144d</bibl>; <foreign lang="greek">ἡ ῥ. λέξις</foreign>, opp. <foreign lang="greek">ἡ πεζή</foreign>, <bibl n="Perseus:abo:tlg,0081,012:11" default="NO"><author>D.H.</author> <title>Comp.</title> 11</bibl>; <orth lang="greek">ῥυθμικοί</orth>, <gen lang="greek" opt="n">οἱ</gen>, <i>rhythmicians</i>, ib. <bibl n="Perseus:abo:tlg,0081,012:17" default="NO">17</bibl>: <foreign lang="greek">ἡ -κή</foreign>, opp. <foreign lang="greek">ἡ μετρική</foreign>, <bibl n="Perseus:abo:tlg,0088,001:p.32M" default="NO"><author>Aristox.</author> <title>Harm.</title> p.32M.</bibl></sense>
+greatscott67.xml done!
+11 references added
+
+greatscott68.xml in progress...
+
+greatscott68.xml done!
+11 references added
+
+greatscott69.xml in progress...
+
+greatscott69.xml done!
+11 references added
+
+greatscott70.xml in progress...
+
+greatscott70.xml done!
+11 references added
+
+greatscott71.xml in progress...
+
+greatscott71.xml done!
+11 references added
+
+greatscott72.xml in progress...
+
+<sense n="II" id="n101760.2" level="2" opt="n"> metaph., <i>wrought as of iron</i>, <cit><quote lang="greek">σ. ἀνάγκαι</quote> <bibl n="Perseus:abo:tlg,0033,005:207" default="NO"><author>Pi.</author> <title>Fr.</title> 207</bibl></cit>; <cit><quote lang="greek">σ. φιλία</quote> <bibl n="Perseus:abo:tlg,0007,070:65b"><author>Plu.</author> <title>[Adul.]</title> 2.65b</bibl></cit>; <foreign lang="greek">σ. νοῦς</foreign>, like Homerʼs <foreign lang="greek">πυκινὸς νόος</foreign>, ib.<bibl n="Perseus:abo:tlg,0007,091:408e">408e</bibl>,<bibl n="Perseus:abo:tlg,0007,101:511b">511b</bibl>; <cit><quote lang="greek">σ. λόγος</quote> <bibl n="Perseus:abo:tlg,0061,003:14" default="NO"><author>Luc.</author> <title>Dem.Enc.</title> 14</bibl></cit>.</sense>
+greatscott72.xml done!
+12 references added
+
+greatscott73.xml in progress...
+
+greatscott73.xml done!
+12 references added
+
+greatscott74.xml in progress...
+
+greatscott74.xml done!
+12 references added
+
+greatscott75.xml in progress...
+
+greatscott75.xml done!
+12 references added
+
+greatscott76.xml in progress...
+
+greatscott76.xml done!
+12 references added
+
+greatscott77.xml in progress...
+
+greatscott77.xml done!
+12 references added
+
+greatscott78.xml in progress...
+
+greatscott78.xml done!
+12 references added
+
+greatscott79.xml in progress...
+
+greatscott79.xml done!
+12 references added
+
+greatscott80.xml in progress...
+
+<sense n="6" id="n110746.7" level="3" opt="n"> <i>gradation of colours</i> in painting, <bibl n="Perseus:abo:tlg,0007,088:346a"><author>Plu.</author> 2.346a</bibl>; <foreign lang="greek">τὰς μίξεις τῶν χρωμάτων οἱ ζωγράφοι φθορὰς ὀνομάζουσι</foreign> ib.<bibl n="Perseus:abo:tlg,0007,112:725c">725c</bibl>, cf. <bibl n="Perseus:abo:tlg,0007,090:393c">393c</bibl>. </sense>
+greatscott80.xml done!
+13 references added
+
+greatscott81.xml in progress...
+
+greatscott81.xml done!
+13 references added
+
+greatscott82.xml in progress...
+
+<sense n="2" id="n113356.5" level="3" opt="n"> esp. of <i>figures</i> or <i>letters,</i> <cit><quote lang="greek">οἱ τῶν γραμμάτων χ.</quote> <bibl n="Perseus:abo:tlg,0007,082:214f"><author>Plu.</author> 2.214f</bibl></cit>; <foreign lang="greek">ὁ τύπος τῶν χ.</foreign> ib.<bibl n="Perseus:abo:tlg,0007,109:577f">577f</bibl>, cf. <bibl n="Perseus:abo:tlg,0007,140:1120f">1120f</bibl>, <bibl n="Perseus:abo:tlg,0060,001:3:67"><author>D.S.</author> 3.67</bibl>; of the <i>letters</i> used by <author>Hp.</author> in <bibl n="Perseus:abo:tlg,0627,006:3:1" default="NO"><title>Epid.</title> 3.1</bibl>, Zeno and Apollonius ap. <author>Gal.</author> 17(1).618, cf. 524sq.; of a single <i>letter</i> of the alphabet, <bibl n="Perseus:abo:tlg,2003,001:2:72a" default="NO"><author>Jul.</author> <title>Or.</title> 2.72a</bibl>; <cit><quote lang="greek">ξυλήφια βραχέα ἔχοντα χαρακτῆρα</quote> <bibl n="Perseus:abo:tlg,0543,001:6:35:7"><author>Plb.</author> 6.35.7</bibl></cit>; <i>brand</i> on a camel, <bibl n="Perseus:abo:pap,P.Gen.:29:8" default="NO"><title>PGen.</title> 29.8</bibl> <date>(ii A. D.)</date>; of <i>symbols</i> in a prescription, <author>Gal.</author> 13.995; of magical <i>symbols</i> (such as the seven vowels), <cit><quote lang="greek">τῶν χ. ἡ ἀπόρρητος φύσις</quote> <bibl n="Perseus:abo:tlg,2003,001:7:216c" default="NO"><author>Jul.</author> <title>Or.</title> 7.216c</bibl></cit>, cf. <bibl n="Perseus:abo:tlg,2023,006:3:13" default="NO"><author>Iamb.</author> <title>Myst.</title> 3.13</bibl>, <bibl n="Perseus:abo:tlg,2049,001:15" default="NO"><author>Sallust.</author> 15</bibl>; of hieroglyphs, opp. <foreign lang="greek">γράμματα,</foreign> <bibl n="Perseus:abo:tlg,0062,063:44" default="NO"><author>Luc.</author> <title>Herm.</title> 44</bibl>. </sense>
+greatscott82.xml done!
+14 references added
+
+greatscott83.xml in progress...
+
+greatscott83.xml done!
+14 references added
+
+greatscott84.xml in progress...
+
+greatscott84.xml done!
+14 references added
+
+greatscott85.xml in progress...
+
+greatscott85.xml done!
+14 references added
+
+greatscott86.xml in progress...
+
+greatscott86.xml done!
+14 references added

@@ -13,7 +13,7 @@ The default values of `[source]` and `[destination]` are `../../LSJLogeion/` and
 ## add_moralia_references
 This script searches for all references to Plutarch's *Moralia* and wraps each of them in a `<bibl>` tag.
 
-The script works by searching for references in the tail of `<author>` tags which refer to Plutarch. (So, either `<author>Plu.</author>` or and `<author>Id.</author>` element which refers back to Plutarch.)
+The script works by searching for references in the tail of elements tags which refer to Plutarch. That is, its nearest preceding `<author>` element is either  `<author>Plu.</author>` or `<author>Id.</author>`, where the `Id.` refers back to a previous Plutarch `<author>` element.
 
 Executing the script is done in the same way as for the `find_and_wrap_id_instances` script. Make sure you are in the right folder.
 
@@ -24,5 +24,9 @@ For the `add_moralia_references` script, the tests focus on the validity of the 
 
 For the `find_and_wrap_id_instances` script, the only test is to ensure the actual text of the LSJ is not changed in the process. Unlike `add_moralia_references`, this is in a proper test module rather than the `main.py`.
 
+Following exploratory testing, I am confident that there are no relevant references in the text nodes of any elements. The assumption on which these scripts are based, that it is the tail node of elements which contains unwrapped *Moralia* elements appears to hold.
+
 ## Known issues
-The assumption for the `add_moralia_refences` tag is not quite correct: not all references to the *Moralia* are in the tail of `<author>` tags referring to Plutarch. Some appear in the tails of `<cit>` and `<sense>` tags. Particularly, there are occurences after `ib.` or `cf.`, which are often references in proper Stephanus (not Wyttenbach) format (so 123b rather than 2.123b). Further investigation should be done to see where else references may be hiding!
+~~The assumption for the `add_moralia_refences` tag is not quite correct: not all references to the *Moralia* are in the tail of `<author>` tags referring to Plutarch. Some appear in the tails of `<cit>` and `<sense>` tags. Particularly, there are occurences after `ib.` or `cf.`, which are often references in proper Stephanus (not Wyttenbach) format (so 123b rather than 2.123b).~~
+
+Update 8 Mar 2024: the scripts have been rewritten to look for references in the tail of *any* element. This has captured a few hundred more references (264 on my last execution of the script). There is one exception: `<title>` elements are specifically ignored, since apparently in all instances for which an apparent stephanus reference is found, the reference is actually for an inscription, not Plutarch's *Moralia*.

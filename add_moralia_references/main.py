@@ -1,9 +1,12 @@
-# This script searches LSJ to find all Plu. Moralia references and wrap them in an appropriate <bibl> XML element
+# This script searches LSJ to find all Plu. Moralia references and wrap them in an appropriate <bibl> XML element.
 #
 # LSJ refers to Plutarch's Moralia according to the 2 volume Wyttenbach edition.
 #
-# Wyttenbach references are of the following kind: 2.1234a, composed of the volumn of Wyttenbach, a period, and a stephanus number.
-# If LSJ refers to several references in the Moralia, it first uses a Wyttenbach reference, followed by stephanus numbers alone.
+# Wyttenbach references are of the following kind: 2.1234a, composed of the volumn of Wyttenbach, a period, a stephanus
+# page number and a section letter.
+#
+# If LSJ refers to several references in the Moralia, it first uses a Wyttenbach reference, followed by stephanus
+# numbers alone. e.g. 2.1234a, 1000b.
 #
 # The TLG and Wyttenbach references for Plutarch's Moralia can be found in plutarch_stephanus_tlg_references.csv
 
@@ -34,21 +37,21 @@ def main():
     # Load XML files
     path_from = arguments[0] if arguments else "../../LSJLogeion/"
     path_to = arguments[1] if len(arguments) > 1 else "../../LSJLogeionNew/"
-    files = load_files(path_from)
+    files = load_xml_files(path_from)
     
     # Initialise the collector
     plutarch_elements = []
     
     references_added = 0
     
-    for file in files:
+    for file in files[:]:
 
         # Reset the collector for each file
         plutarch_elements[:] = []
 
         with open(path_from + file, "r") as f1:
 
-            print(f"{file} in progress...")
+            print(f"\n{file} in progress...\n")
             
             file_string = f1.read().encode("utf-8") # encoding required for lxml
             
@@ -57,8 +60,11 @@ def main():
             plutarch_elements += get_plutarch_elements(root)
     
             # Wrap the references in <bibl> elements
-            new_elements = wrap_bibl_elements(plutarch_elements)
-            references_added += len(new_elements)
+            for element in plutarch_elements:
+                new_elements = wrap_references(element)
+                # TODO: does wrap_reference return False if it fails? it needs to for the following conditional...
+                if new_elements:
+                    references_added += len(new_elements)
 
             # Error checking - has the text changed at all?
             ending_text = "".join(root.itertext())
@@ -67,23 +73,23 @@ def main():
                 return
 
             # Save the new XML
-            with open(path_to + file, "w") as f2:
-                file_string = etree.tostring(root, encoding="unicode")
-                f2.write(file_string)
-                print(f"{file} done!")
+            # with open(path_to + file, "w") as f2:
+            #     file_string = etree.tostring(root, encoding="unicode")
+            #     f2.write(file_string)
+                # print(f"{file} done!")
 
             # output the file's added references
             print(f"{references_added} references added")
 
-def load_files(path):
+def load_xml_files(path):
     
     # Load XML files
-    lsj_xml_files = os.listdir(path) # all files in the file path
-    lsj_xml_files = [x for x in lsj_xml_files if x[-4:] == ".xml"] # only XML files please
-    lsj_xml_files.remove("greatscott01.xml") # front matter; not required for search
-    lsj_xml_files.sort()
+    xml_files = os.listdir(path) # all files in the file path
+    xml_files = [x for x in xml_files if x[-4:] == ".xml"] # only XML files please
+    xml_files.remove("greatscott01.xml") # front matter; not required for search
+    xml_files.sort()
 
-    return lsj_xml_files
+    return xml_files
     
 # RUN
 
