@@ -41,6 +41,7 @@ def main():
     
     # Initialise the collector
     plutarch_elements = []
+    new_elements = []
     
     references_added = 0
     
@@ -51,7 +52,7 @@ def main():
 
         with open(path_from + file, "r") as f1:
 
-            print(f"\n{file} in progress...\n")
+            print(f"{file} in progress...")
             
             file_string = f1.read().encode("utf-8") # encoding required for lxml
             
@@ -61,6 +62,7 @@ def main():
     
             # Wrap the references in <bibl> elements
             for element in plutarch_elements:
+                new_elements[:] = []
                 new_elements = wrap_references(element)
                 # TODO: does wrap_reference return False if it fails? it needs to for the following conditional...
                 if new_elements:
@@ -73,10 +75,10 @@ def main():
                 return
 
             # Save the new XML
-            # with open(path_to + file, "w") as f2:
-            #     file_string = etree.tostring(root, encoding="unicode")
-            #     f2.write(file_string)
-                # print(f"{file} done!")
+            with open(path_to + file, "w") as f2:
+                file_string = etree.tostring(root, encoding="unicode")
+                f2.write(file_string)
+                print(f"{file} done!")
 
             # output the file's added references
             print(f"{references_added} references added")
