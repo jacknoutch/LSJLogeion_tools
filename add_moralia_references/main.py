@@ -85,15 +85,14 @@ def main():
 
 def load_xml_files(path):
     
-    # Load XML files
-    xml_files = os.listdir(path) # all files in the file path
-    xml_files = [x for x in xml_files if x[-4:] == ".xml"] # only XML files please
-    xml_files.remove("greatscott01.xml") # front matter; not required for search
+    xml_files = os.listdir(path)
+
+    re_file_match = "greatscott\d{2}\.xml"
+    xml_files = [x for x in xml_files if re.match(re_file_match, x)]
+    
     xml_files.sort()
 
     return xml_files
-    
-# RUN
 
 if __name__ == "__main__":
     main()
