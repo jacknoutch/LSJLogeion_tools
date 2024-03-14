@@ -1,4 +1,5 @@
 import csv, os, re
+import pandas as pd
 from lxml import etree
 
 # REGEX STRINGS
@@ -61,25 +62,6 @@ def etree_print(element: etree.Element) -> None:
 
 # INSERTION OF NEW ELEMENTS
 
-def load_moralia_tlg_csv() -> list:
-    script_path = os.path.abspath(__file__)
-    script_dir = os.path.dirname(script_path)
-    csv_path = os.path.join(script_dir, "../plutarch_stephanus_tlg_references.csv")
-    
-    return get_plutarch_rows_from_csv(os.path.join(csv_path))
-
-def get_plutarch_rows_from_csv(source):
-    csv_rows = []
-
-    with open(source) as csv_file:
-        csv_reader = csv.reader(csv_file)
-        fields = next(csv_reader)
-
-        for row in csv_reader:
-            csv_rows.append(row)
-
-        return csv_rows
-
 def clean_stephanus(raw_stephanus: str) -> str:
     """"""
     # TODO: raw_stephanus could be, e.g. "1.234a, 345b"  and this function not raise an exception
@@ -98,17 +80,17 @@ def clean_stephanus(raw_stephanus: str) -> str:
 
     return match.group()
 
-def get_tlg_reference(stephanus_reference: str, csv_rows: list[list[str]]) -> tuple[str, str]:
+def get_tlg_reference(stephanus: str, moralia_df: pd.DataFrame) -> tuple[str, str]:
     """
     """
     
-    for row in csv_rows:
-        author = row[7]
-        work = row[8]
-        if is_larger_stephanus(stephanus_reference, row[6]): # row[6] is the stephanus reference representing the last section of the work
+    for row in moralia_df.itertuples():
+        author = row.author
+        work = row.work
+        if is_larger_stephanus(stephanus, row.end):
             return (author, work)
     
-    raise ValueError(f"stephanus_reference ({stephanus_reference}) is too large for Plutarch's Moralia")
+    raise ValueError(f"stephanus ({stephanus}) is too large for Plutarch's Moralia")
 
 def is_larger_stephanus(ref1: str, ref2: str) -> bool:
     """Return True if ref2 is larger than ref1 and vice versa.

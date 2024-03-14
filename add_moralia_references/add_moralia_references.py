@@ -1,3 +1,5 @@
+import pandas as pd
+
 from lxml import etree
 from utilities import *
 
@@ -67,18 +69,16 @@ def wrap_references(element: etree.Element, new_elements: list[etree.Element]=[]
     Returns a list of the newly wrapped <bibl> references.
     """
 
-    plutarch_rows = load_moralia_tlg_csv()
-
-    new_element = wrap_bibl_element(element, plutarch_rows)
+    new_element = wrap_bibl_element(element)
     new_elements.append(new_element)
 
     while has_reference(new_element.tail):
-        new_element = wrap_bibl_element(new_element, plutarch_rows)
+        new_element = wrap_bibl_element(new_element)
         new_elements.append(new_element)
 
     return new_elements
 
-def wrap_bibl_element(element: etree.Element, plutarch_rows: list) -> etree.Element:
+def wrap_bibl_element(element: etree.Element) -> etree.Element:
     """Wraps the first stephanus reference in the tail of a given element in a new, appropriate <bibl> element.
 
     Returns the new <bibl> element.
@@ -96,7 +96,9 @@ def wrap_bibl_element(element: etree.Element, plutarch_rows: list) -> etree.Elem
     element.tail = separated_tail[0]
 
     stephanus = clean_stephanus(separated_tail[1])
-    author, work = get_tlg_reference(stephanus, plutarch_rows)
+
+    global moralia_abbreviations
+    author, work = get_tlg_reference(stephanus, moralia_abbreviations)
     
     new_bibl_element = etree.Element("bibl", {"n": f"Perseus:abo:tlg,{author},{work}:{stephanus}"})
     new_bibl_element.text = separated_tail[1]
@@ -105,3 +107,17 @@ def wrap_bibl_element(element: etree.Element, plutarch_rows: list) -> etree.Elem
     parent.insert(index, new_bibl_element)
     
     return new_bibl_element
+
+# Loading of tlg references
+
+def load_moralia_abbreviations() -> pd.DataFrame:
+    script_path = os.path.abspath(__file__)
+    script_dir = os.path.dirname(script_path)
+
+    tsv_path = os.path.join(script_dir, "../moralia_abbreviations.tsv")
+    
+    df = pd.read_csv(tsv_path, sep="\t")
+    
+    return df
+
+moralia_abbreviations = load_moralia_abbreviations()
