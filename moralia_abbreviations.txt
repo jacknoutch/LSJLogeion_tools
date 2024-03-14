@@ -1,0 +1,84 @@
+067	1a–14c	Lib. educ.	De liberis educandis	περὶ παίδων ἀγωγῆς
+068	14d–37b	Aud. poet.	De audiendis poetis	πῶς δεῖ τὸν νέον ποιημάτων ἀκούειν
+069	37b–48d	Aud.	De audiendo	περὶ τοῦ ἀκούειν
+070	48e–74e	Adul.	De adulatore et amico	πῶς ἄν τις διακρίνειε τὸν κόλακα τοῦ φίλου 
+071	75a–86a	Profect.	De profectibus in virtute	πῶς ἄν τις αἴσθοιτο ἑαυτοῦ προκόπτοντος ἐπ᾿ ἀρετῇ
+072	86b–92f	Util.	De capienda ex inimicis utilitate	πῶς ἄν τις ἀπ᾿ ἐχθρῶν ὠφελοῖτο
+073	93a–97b	Mult.	De amicorum multitudine	περὶ πολυφιλίας
+074	97c–100a	Fort.	De fortuna	περὶ τύχης
+075	100b–101e	Virt. et vit.	De virtute et vitio	περὶ ἀρετῆς καὶ κακίας
+076	101f–122a	Cons. Apoll.	Consolatio ad Apollonium	παραμυθητικὸς πρὸς Ἀπολλώνιον
+077	122b–137e	Sanit.	De tuenda sanitate	ὑγιεινὰ παραγγέλματα
+078	138a–146a	Coniug.	Coniugalia praecepta	γαμικὰ παραγγέλματα
+079	146b–164d	Symp.	Septem sapientium convivium	τῶν ἑπτὰ σοφῶν συμπόσιον
+080	164e–171f	Superst.	De superstitione	περὶ δεισιδαιμονίας
+081	172b–208a	Apophth. reg.	Regum et imperatorum apophthegmata	ἀποφθέγματα βασιλέων καὶ στρατηγῶν
+082	208b–242d	Apophth. Lac.	Apophthegmata Laconica	ἀποφθέγματα Λακωνικά, τὰ παλαιὰ τῶν Λακεδαιμονίων ἐπιτηδεύματα, Λακαινῶν ἀποφθέγματα
+083	242e–263c	Mul. virt.	Mulierum virtutes	γυναικῶν ἀρεταί
+084	263d–304f	Aet. Gr.	Aetia Graeca et Romana	αἴτια Ῥωμαϊκά καὶ Ἑλληνικά 
+085	305a–316b	Par. min.	Parallela minora	συναγωγὴ ἱστοριῶν παραλλήλων Ἑλληνικῶν καὶ Ῥωμαϊκῶν
+086	316c–326c	Fort. Rom.	De fortuna Romanorum	περὶ τῆς Ῥωμαίων τύχης
+087	326d–345b	Alex. fort.	De Alexandri Magni fortuna aut virtute	περὶ τῆς Ἀλεξάνδρου τύχης ἢ ἀρετῆς λόγοι
+088	345c–351b	Glor. Ath.	De gloria Atheniensium	πότερον Ἀθηναῖοι κατὰ πόλεμον ἢ κατὰ σοφίαν ἐνδοξότεροι
+089	351c–384c	Isid.	De Iside et Osiride	περὶ Ἴσιδος καὶ Ὀσίριδος
+090	384d–394c	E apud Delph.	De E apud Delphos	περὶ τοῦ Εἶ τοῦ ἐν Δελφοῖς
+091	394d–409d	Pyth.	De Pythiae oraculis	περὶ τοῦ μὴ χρᾶν ἔμμετρα νῦν τὴν Πυθίαν
+092	409e–438d	Def. orac.	De defectu oraculorum	περὶ τῶν ἐκλελοιπότων χρηστηρίων
+093	439a–440c	Virt. doc.	An virtute doceri possit	εἰ διδακτὸν ἡ ἀρετή
+094	440d–452d	Virt. mor.	De virtute morali	περὶ τῆς ἠθικῆς ἀρετῆς
+095	452f–464d	Cohib.	De cohibenda ira	περὶ ἀοργησίας
+096	464e–477f	Tranq.	De tranquillitate animi	περὶ εὐθυμίας
+097	478a–492d	Frat.	De fraterno amore	περὶ φιλαδελφίας
+098	493a–497e	Am. prol.	De amore prolis	περὶ τῆς εἰς τὰ ἔκγονα φιλοστοργίας
+099	498a–500a	Vitios.	An vitiositas ad infelicitatem sufficiat	εἰ αὐτάρκης ἡ κακία πρὸς κακοδαιμονίαν
+100	500b–502a	Affect.	Animine an corporis affectiones sint peiores	περὶ τοῦ πότερον τὰ τῆς ψυχῆς ἢ τὰ τοῦ σώματος πάθη χείρονα
+101	502b–515a	Garr.	De garrulitate	περὶ ἀδολεσχίας
+102	515b–523b	Curios.	De curiositate	περὶ πολυπραγμοσύνης
+103	523c–528b	Cupid.	De cupiditate divitiarum	περὶ φιλοπλουτίας
+104	528c–536d	Vit. pud.	De vitioso pudore	περὶ δυσωπίας
+105	536e–538e	Inv.	De invidia et odio	περὶ φθόνου καὶ μίσους
+106	539a–547f	Laud.	De laude ipsius	περὶ τοῦ ἑαυτὸν ἐπαινεῖν ἀνεπιφθόνως
+107	548a–568a	Vind.	De sera numinis vindicta	περὶ τῶν ὑπὸ τοῦ θείου βραδέως τιμωρουμένων
+108	568b–574f	Fat.	De fato	περὶ εἱμαρμένης
+109	575a–598f	Gen. Socr.	De genio Socratis	περὶ τοῦ Σωκράτους δαιμονίου
+110	599a–607f	Exil.	De exilio	περὶ φυγῆς
+111	608a–612b	Cons. ux.	Consolatio ad uxorem	παραμυθητικὸς εἰς τὴν γυναῖκα τὴν αὑτοῦ
+112	612b–748d	QConv.	Quaestiones convivales	συμποσιακὰ προβλήματα
+113	748e–771e	Amat.	Amatorius	ἐρωτικός
+114	771e–775e	Amat. narr.	Amatoriae narrationes	ἐρωτικαὶ διηγήσεις
+115	776a–779c	Max. cum princip.	Maxime cum principibus viris philosopho esse disserendum	περὶ τοῦ ὅτι μάλιστα τοῖς ἡγεμόσι δεῖ τὸν φιλόσοφον διαλέγεσθαι
+116	779d–782f	Ad. princ. ind.	Ad principem indoctum	πρὸς ἡγεμόνα ἀπαίδευτον 
+117	783b–797f	An seni	An seni respublica gerenda	εἰ πρεσβυτέρῳ πολιτευτέον
+118	798a–825f	Praec.	Praecepta gerendae reipublicae	πολιτικὰ παραγγέλματα
+119	826a–827c	Monarch.	De unius in republica dominatione, populari statu et paucorum imperio	περὶ μοναρχίας καὶ δημοκρατίας καὶ ὀλιγαρχίας
+120	827d–832a	Vit. aer. al.	De vitando aere alieno	περὶ τοῦ μὴ δεῖν δανείζεσθαι
+121	832b–852e	VOrat.	Decem oratorum vitae	περὶ τῶν δέκα ῥητόρων
+122	853a–854d	Comp. Arist. Men.	De comparatione Aristophanis et Menandri epitome	συγκρίσεως Ἀριστοφάνους καὶ Μενάνδρου ἐπιτομή
+123	854e–874c	Herod.	De Herodoti malignitate	περὶ τῆς Ἡροδότου κακοηθείας
+125	911c–919e	Aet. phys.	Aetia physica	αἴτια φυσικά
+126	920b–945e	Fac. lun.	De facie in orbe lunae	περὶ τοῦ ἐμφαινομένου προσώπου τῷ κύκλῳ τῆς σελήνης
+127	945f–955c	Frig.	De primo frigido	περὶ τοῦ πρώτως ψυχροῦ
+128	955d–958e	Aq.	Aquane an ignis sit utilior	πότερον ὕδωρ ἢ πῦρ χρησιμώτερον
+129	959a–985c	Sollert.	De sollertia animalium	πότερα τῶν ζῴων φρονιμώτερα
+130	985d–992e	Bruta anim.	Bruta animalia ratione uti	περὶ τοῦ τὰ ἄλογα λόγῳ χρῆθαι
+131	993a–996c	Es. carn. 1	De esu carnium oratt. 1	περὶ σαρκοφαγίας α′
+132	996d–999b	Es. carn. 2	De esu carnium oratt. 2	περὶ σαρκοφαγίας β′
+133	999c–1011e	QPlat.	Platonicae quaestiones	Πλατωνικὰ ζητήματα
+134	1012b–1030c	An. procr.	De anima procreatione in Timaeo	περὶ τῆς ἐν Τιμαίῳ ψυχογονίας
+135	1030d–1032f	An. procr. epit.	Epitome de anima procreatione in Timaeo	ἐπιτομὴ τοῦ περὶ τῆς ἐν τῷ Τιμαίῳ ψυχογονίας
+136	1033a–1057b	Stoic. rep.	De Stoicorum repugnantiis	περὶ Στωικῶν ἐναντιωμάτων
+137	1057c–1058e	Stoic. absurd.	Stoicos absurdiora poetis dicere	ὅτι παραδοξότερα οἱ Στωικοὶ τῶν ποιητῶν λέγουσιν
+138	1058e–1086b	Comm. not.	De communibus notitiis adversus Stoicos	περὶ τῶν κοινῶν ἐννοιῶν πρὸς τοὺς Στωικούς
+139	1086c–1107c	Suav.	Non posse suaviter vivi secundum Epicurum	ὅτι οὐδ᾿ ἡδέως ζῆν ἔστιν κατ᾿ Ἐπίκουρον
+140	1107d–1127e	Col.	Adversus Coloten	πρὸς Κολώτην
+141	1128a–1130e	Lat. viv.	De latenter vivendo	εἰ καλῶς εἴρηται τὸ λάθε βιώσας
+
+
+143	Libid.	De libidine et aegritudine	πότερον ψυχῆς ἢ σώματος ἐπιθυμία καὶ λύπη	in G. Bernardakis VII 1–11; Ziegler-Pohlenz, T 1966, VI.3. 
+144	Pathet.	Quod in animo humano affectibus subiectum, parsne sit eius an facultas	εἰ μέρος τὸ παθητικὸν τῆς ἀνθρώπου ψυχῆς ἢ δύναμις	in G. Bernardakis, T 1896, VII 12–17. 
+??146	Prov. Alex.	De proverbiis Alexandrinorum	παροιμίαι αἷς Ἀλεξανδρεῖς ἐχρῶντο, 149..
+147	Imposs.	Ecloga de impossibilibus	παροιμίαι περὶ τῶν ἀδυνάτων	VII 463–464.
+
+Pseudo Plut. but with Moralia pages
+0094.003: 874d–911c	Plac.	De placitis philosophorum	περὶ τῶν ἀρεσκόντων τοῖς φιλοσόφοις
+0094.002: 1131a–1147	Mus.	De musica	περὶ μουσικῆς
