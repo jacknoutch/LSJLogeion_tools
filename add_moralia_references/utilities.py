@@ -85,10 +85,8 @@ def get_tlg_reference(stephanus: str, moralia_df: pd.DataFrame) -> tuple[str, st
     """
     
     for row in moralia_df.itertuples():
-        author = row.author
-        work = row.work
         if is_larger_stephanus(stephanus, row.end):
-            return (author, work)
+            return (row.author, row.work)
     
     raise ValueError(f"stephanus ({stephanus}) is too large for Plutarch's Moralia")
 
