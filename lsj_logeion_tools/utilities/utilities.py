@@ -85,29 +85,28 @@ def get_tlg_reference(stephanus: str, moralia_df: pd.DataFrame) -> tuple[str, st
     """
     
     for row in moralia_df.itertuples():
-        if is_larger_stephanus(stephanus, row.end):
+        if is_larger_stephanus(row.end, stephanus):
             return (row.author, row.work, row.abbreviation)
     
     raise ValueError(f"stephanus ({stephanus}) is too large for Plutarch's Moralia")
 
-def is_larger_stephanus(ref1: str, ref2: str) -> bool:
-    """Return True if ref2 is larger than ref1 and vice versa.
+def is_larger_stephanus(larger_ref: str, smaller_ref: str) -> bool:
+    """Return True if larger_ref is larger than smaller_ref and vice versa.
     """
-    if not isinstance(ref1, str) and not isinstance(ref2, str):
-        raise TypeError(f"one or both of ref1 ({type(ref1)}) and ref2 ({type(ref2)}) are not strings")
+    if not isinstance(larger_ref, str) and not isinstance(smaller_ref, str):
+        raise TypeError(f"one or both of larger_ref ({type(larger_ref)}) and smaller_ref ({type(smaller_ref)}) are not strings")
 
     # clean stephanus references are of the form '1234a'
-    re_clean_stephanus = r"[1-9]\d{0,3}[a-f]"
-    assert re.fullmatch(re_clean_stephanus, ref1), f"ref1 ('{ref1}') is not a clean stephanus reference"
-    assert re.fullmatch(re_clean_stephanus, ref2), f"ref2 ('{ref2}') is not a clean stephanus reference"
+    re_clean_stephanus = r"[1-9]\d{0,3}[a-f]"    assert re.fullmatch(re_clean_stephanus, larger_ref), f"larger_ref ('{larger_ref}') is not a clean stephanus reference"
+    assert re.fullmatch(re_clean_stephanus, smaller_ref), f"smaller_ref ('{smaller_ref}') is not a clean stephanus reference"
 
-    page1, section1 = split_stephanus(ref1)
-    page2, section2 = split_stephanus(ref2)
+    page1, section1 = split_stephanus(larger_ref)
+    page2, section2 = split_stephanus(smaller_ref)
 
     if page1 == page2:
         return section1 > section2
 
-    return page1 < page2
+    return page1 > page2
 
 def split_stephanus(stephanus: str) -> tuple[int, str]:
     """Split a simple stephanus reference str to return a tuple of the page and section.
@@ -131,3 +130,17 @@ def split_stephanus(stephanus: str) -> tuple[int, str]:
     section = match["section"]
     
     return page, section
+
+# Loading Moralia data
+
+def load_moralia_abbreviations() -> pd.DataFrame:
+    script_path = os.path.abspath(__file__)
+    script_dir = os.path.dirname(script_path)
+
+    tsv_path = os.path.join(script_dir, "../resources/moralia_abbreviations.tsv")
+    
+    df = pd.read_csv(tsv_path, sep="\t")
+    
+    return df
+
+moralia_abbreviations = load_moralia_abbreviations()
