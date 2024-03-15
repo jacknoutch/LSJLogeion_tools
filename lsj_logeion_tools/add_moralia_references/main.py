@@ -97,5 +97,5 @@ def load_xml_files(path):
 
     return xml_files
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()

@@ -1,7 +1,7 @@
 import pandas as pd
 
 from lxml import etree
-from utilities import *
+from LSJLogeion_tools.utilities.utilities import *
 
 # COLLECTION OF REFERENCES.
 
