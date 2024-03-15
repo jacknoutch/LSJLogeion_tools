@@ -1,5 +1,4 @@
-import os, re
-import pandas as pd
+import re
 from lxml import etree
 from utilities.utilities import *
 from copy import deepcopy
@@ -28,26 +27,21 @@ def process_plutarch_bibls(bibls: list[etree.Element]) -> list[etree.Element]:
 
 def process_plutarch_bibl(bibl: etree.Element) -> bool:
     old_bibl = deepcopy(bibl)
+    
     amendments = []
     
-    global moralia_abbreviations
+    matches = has_valid_n_attribute(bibl)
 
-    moralia_works = moralia_abbreviations["work"].unique()
-
-    n_attribute = bibl.get("n")
-    re_n_attribute = r"Perseus:abo:tlg,(?P<author>0007|0094),(?P<work>\d{3}):(?P<stephanus>\d{1,4}[abcdef])"
-
-    matches = re.fullmatch(re_n_attribute, n_attribute)
-
-    # Does the bibl have a valid "n" attribute?
     if not matches:
-        # TODO: Check that there aren't Moralia references in here?
         return False
     
     n_author = matches["author"]
     n_work = int(matches["work"])
+    n_stephanus = matches["stephanus"]
     
     # Is this a Moralia work?
+    global moralia_abbreviations
+    moralia_works = moralia_abbreviations["work"].unique()
     if not n_work in moralia_works:
         return False
     
@@ -55,7 +49,6 @@ def process_plutarch_bibl(bibl: etree.Element) -> bool:
     bibl_text = "".join(bibl.itertext())
     re_stephanus = r"\b([1-9]\d{0,3}[a-f])\b"
     text_stephanus = re.search(re_stephanus, bibl_text).group()
-    n_stephanus = matches["stephanus"]
 
     if n_stephanus != text_stephanus:
         n_stephanus = text_stephanus
@@ -96,19 +89,33 @@ def process_plutarch_bibl(bibl: etree.Element) -> bool:
             amendments.append("title_element_text_fixed")
 
     else:
-        new_title_element = etree.SubElement(bibl, "title")
-        new_title_element.text = f"[{n_abbreviation}]"    
 
-        if author_element is not None:
-                
-            new_title_element.tail = author_element.tail
-            author_element.tail = " "
-            amendments.append("title_element_added_post_author")
+        parent = bibl.getparent()
+        while parent.getparent() is not None and parent.getparent().tag != "div2":
+            parent = parent.getparent()
 
-        else:
-            new_title_element.tail = f" {bibl.text}"
-            bibl.text = ""
-            amendments.append("title_element_added_no_author")
+        last_title = None
+
+        for element in parent.findall(".//"):
+            if element.tag == "title":
+                last_title = element
+            if element == bibl:
+                break
+
+        if last_title is None or last_title.text != f"[{n_abbreviation}]":
+            new_title_element = etree.SubElement(bibl, "title")
+            new_title_element.text = f"[{n_abbreviation}]"    
+
+            if author_element is not None:
+                    
+                new_title_element.tail = author_element.tail
+                author_element.tail = " "
+                amendments.append("title_element_added_post_author")
+
+            else:
+                new_title_element.tail = f" {bibl.text}"
+                bibl.text = ""
+                amendments.append("title_element_added_no_author")
 
     if len(amendments) > 0:
         # etree_print(old_bibl)
@@ -116,3 +123,17 @@ def process_plutarch_bibl(bibl: etree.Element) -> bool:
         return bibl
     
     return False
+
+def has_valid_n_attribute(element: etree.Element) -> bool:
+    
+    n_attribute = element.get("n")
+    re_n_attribute = r"Perseus:abo:tlg,(?P<author>0007|0094),(?P<work>\d{3}):(?P<stephanus>\d{1,4}[abcdef])"
+    
+    matches = re.fullmatch(re_n_attribute, n_attribute)
+
+    # Does the bibl have a valid "n" attribute?
+    if not matches:
+        # TODO: Check that there aren't Moralia references in here?
+        return False
+    
+    return matches

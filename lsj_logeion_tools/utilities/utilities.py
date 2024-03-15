@@ -97,7 +97,8 @@ def is_larger_stephanus(larger_ref: str, smaller_ref: str) -> bool:
         raise TypeError(f"one or both of larger_ref ({type(larger_ref)}) and smaller_ref ({type(smaller_ref)}) are not strings")
 
     # clean stephanus references are of the form '1234a'
-    re_clean_stephanus = r"[1-9]\d{0,3}[a-f]"    assert re.fullmatch(re_clean_stephanus, larger_ref), f"larger_ref ('{larger_ref}') is not a clean stephanus reference"
+    re_clean_stephanus = r"[1-9]\d{0,3}[a-f]"
+    assert re.fullmatch(re_clean_stephanus, larger_ref), f"larger_ref ('{larger_ref}') is not a clean stephanus reference"
     assert re.fullmatch(re_clean_stephanus, smaller_ref), f"smaller_ref ('{smaller_ref}') is not a clean stephanus reference"
 
     page1, section1 = split_stephanus(larger_ref)
