@@ -57,7 +57,7 @@ def get_string_reference(text: str, maxsplit: int=0) -> list[str]:
     return matches
 
 def etree_print(element: etree.Element) -> None:
-    """A quicker method for printing the string of an etree.Element to the terminal."""
+    """A method for printing the string of an etree.Element to the terminal."""
     print(etree.tostring(element, encoding="unicode"))
 
 # INSERTION OF NEW ELEMENTS
