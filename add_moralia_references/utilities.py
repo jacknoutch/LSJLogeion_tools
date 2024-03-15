@@ -80,13 +80,13 @@ def clean_stephanus(raw_stephanus: str) -> str:
 
     return match.group()
 
-def get_tlg_reference(stephanus: str, moralia_df: pd.DataFrame) -> tuple[str, str]:
+def get_tlg_reference(stephanus: str, moralia_df: pd.DataFrame) -> tuple[str, str, str]:
     """
     """
     
     for row in moralia_df.itertuples():
         if is_larger_stephanus(stephanus, row.end):
-            return (row.author, row.work)
+            return (row.author, row.work, row.abbreviation)
     
     raise ValueError(f"stephanus ({stephanus}) is too large for Plutarch's Moralia")
 

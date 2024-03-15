@@ -98,11 +98,16 @@ def wrap_bibl_element(element: etree.Element) -> etree.Element:
     stephanus = clean_stephanus(separated_tail[1])
 
     global moralia_abbreviations
-    author, work = get_tlg_reference(stephanus, moralia_abbreviations)
+    author, work, title = get_tlg_reference(stephanus, moralia_abbreviations)
     
-    new_bibl_element = etree.Element("bibl", {"n": f"Perseus:abo:tlg,{author},{work}:{stephanus}"})
-    new_bibl_element.text = separated_tail[1]
+    new_bibl_element = etree.Element("bibl", {"n": f"Perseus:abo:tlg,{author:04d},{work:03d}:{stephanus}"})
     new_bibl_element.tail = separated_tail[2]
+
+    title_element = etree.SubElement(new_bibl_element, "title")
+    title_element.text = title
+    title_element.tail = " " + separated_tail[1]
+
+    etree_print(new_bibl_element)
         
     parent.insert(index, new_bibl_element)
     

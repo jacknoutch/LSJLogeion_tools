@@ -39,6 +39,8 @@ def main():
     path_to = arguments[1] if len(arguments) > 1 else "../../LSJLogeionNew/"
     files = load_xml_files(path_from)
     
+    error_checking = False
+
     # Initialise the collector
     plutarch_elements = []
     new_elements = []
@@ -68,11 +70,12 @@ def main():
                 if new_elements:
                     references_added += len(new_elements)
 
-            # Error checking - has the text changed at all?
-            ending_text = "".join(root.itertext())
-            if starting_text != ending_text:
-                print("WARNING: text has been changed during the process!")
-                return
+            # Error checking - has the text changed?
+            if error_checking:
+                ending_text = "".join(root.itertext())
+                if starting_text != ending_text:
+                    print("WARNING: text has been changed during the process!")
+                    return
 
             # Save the new XML
             with open(path_to + file, "w") as f2:
