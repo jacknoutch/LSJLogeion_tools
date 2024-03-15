@@ -1,6 +1,7 @@
 import os, re
 import pandas as pd
 from lxml import etree
+from utilities.utilities import *
 from copy import deepcopy
 
 def get_plutarch_bibls(root: etree.Element) -> list[etree.Element]:
@@ -115,73 +116,3 @@ def process_plutarch_bibl(bibl: etree.Element) -> bool:
         return bibl
     
     return False
-
-# Loading of tlg references
-
-def load_moralia_abbreviations() -> pd.DataFrame:
-    script_path = os.path.abspath(__file__)
-    script_dir = os.path.dirname(script_path)
-
-    tsv_path = os.path.join(script_dir, "../moralia_abbreviations.tsv")
-    
-    df = pd.read_csv(tsv_path, sep="\t")
-    
-    return df
-
-def etree_print(element: etree.Element) -> None:
-    """A method for printing the string of an etree.Element to the terminal."""
-    print(etree.tostring(element, encoding="unicode"))
-
-def get_tlg_reference(stephanus: str, moralia_df: pd.DataFrame) -> tuple[str, str, str]:
-    """
-    """
-    
-    for row in moralia_df.itertuples():
-        if is_larger_stephanus(row.end, stephanus):
-            return (row.author, row.work, row.abbreviation)
-    
-    raise ValueError(f"stephanus ({stephanus}) is too large for Plutarch's Moralia")
-
-def is_larger_stephanus(ref1: str, ref2: str) -> bool:
-    """Return True if ref1 is larger than ref2 and vice versa.
-    """
-    if not isinstance(ref1, str) and not isinstance(ref2, str):
-        raise TypeError(f"one or both of ref1 ({type(ref1)}) and ref2 ({type(ref2)}) are not strings")
-
-    # clean stephanus references are of the form '1234a'
-    re_clean_stephanus = r"[1-9]\d{0,3}[a-f]"
-    assert re.fullmatch(re_clean_stephanus, ref1), f"ref1 ('{ref1}') is not a clean stephanus reference"
-    assert re.fullmatch(re_clean_stephanus, ref2), f"ref2 ('{ref2}') is not a clean stephanus reference"
-
-    page1, section1 = split_stephanus(ref1)
-    page2, section2 = split_stephanus(ref2)
-
-    if page1 == page2:
-        return section1 > section2
-
-    return page1 > page2
-
-def split_stephanus(stephanus: str) -> tuple[int, str]:
-    """Split a simple stephanus reference str to return a tuple of the page and section.
-
-    Argument 'stephanus' must consist of the reference only. Whitespace is acceptable.
-    
-    e.g. split_stephanus('512b') -> (512, 'b')
-    e.g. split_stephanus('  2.432d ') -> (432, 'd')
-    
-    Returns False if a stephanus reference is not found."""
-
-    stephanus = stephanus.strip()
-
-    re_split_stephanus = r"\b(?:2\.){0,1}(?P<page>\d{1,4})(?P<section>[a-f])\b"
-    match = re.fullmatch(re_split_stephanus, stephanus)
-
-    if not match:
-        raise ValueError(f"split_stephanus: No match found for 'stephanus' {stephanus}")
-
-    page = int(match["page"])
-    section = match["section"]
-    
-    return page, section
-
-moralia_abbreviations = load_moralia_abbreviations()

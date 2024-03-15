@@ -1,7 +1,7 @@
 import pandas as pd
 
 from lxml import etree
-from LSJLogeion_tools.utilities.utilities import *
+from utilities.utilities import *
 
 # COLLECTION OF REFERENCES.
 
@@ -113,16 +113,3 @@ def wrap_bibl_element(element: etree.Element) -> etree.Element:
     
     return new_bibl_element
 
-# Loading of tlg references
-
-def load_moralia_abbreviations() -> pd.DataFrame:
-    script_path = os.path.abspath(__file__)
-    script_dir = os.path.dirname(script_path)
-
-    tsv_path = os.path.join(script_dir, "../moralia_abbreviations.tsv")
-    
-    df = pd.read_csv(tsv_path, sep="\t")
-    
-    return df
-
-moralia_abbreviations = load_moralia_abbreviations()
