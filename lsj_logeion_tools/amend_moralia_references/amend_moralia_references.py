@@ -39,13 +39,20 @@ def process_moralia_bibls(bibls: list[etree.Element]) -> list[etree.Element]:
     return [e for e in bibls if process_moralia_bibl(e) is not False]
 
 def process_moralia_bibl(bibl: etree.Element) -> bool:
-    """"""
+    """Tests various aspects of the <bibl> element and amends as necessary."""
     old_bibl = deepcopy(bibl)
     
-    amendments = []
+    amendments = {
+        "n_stephanus_doesnt_match": False,
+        "n_stephanus_not_in_work_range": False,
+        "title_element_abbrev_incorrect": False,
+        "title_element_needed_post_author": False,
+        "title_element_needed_no_author": False,
+    }
 
     n_attribute = bibl.attrib["n"]
     n_author, n_work, n_stephanus = parse_n_attribute(n_attribute)
+    n_work = int(n_work)
     
     # Does the "n" attribute's stephanus match the one in the text?
     bibl_text = "".join(bibl.itertext())
@@ -54,8 +61,8 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
 
     if n_stephanus != text_stephanus:
         n_stephanus = text_stephanus
-        bibl.attrib["n"] = f"Perseus:abo:tlg,{n_author},{n_work:03}:{n_stephanus}"
-        amendments.append("fixed_n_stephanus")
+        bibl.attrib["n"] = f"Perseus:abo:tlg,{n_author},{n_work:03d}:{n_stephanus}"
+        amendments["n_stephanus_doesnt_match"] = True
     
     # Is the "n" attribute's stephanus within the work's stephanus range?
     df_work = moralia_abbreviations.query(f"work == {n_work}")
@@ -64,19 +71,10 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
     n_work_start = df_work["start"].iloc[0]
     n_work_end = df_work["end"].iloc[0]
     
-    if is_larger_stephanus(n_work_start, n_stephanus) or is_larger_stephanus (n_stephanus, n_work_end):
+    if is_larger_stephanus(n_work_start, n_stephanus) or is_larger_stephanus(n_stephanus, n_work_end):
         n_author, n_work, n_abbreviation = get_tlg_reference(n_stephanus, moralia_abbreviations)
         bibl.attrib["n"] = f"Perseus:abo:tlg,{n_author:04},{n_work:03}:{n_stephanus}"
-        amendments.append("fixed_n_work")
-
-    # Test author element
-    author_element = bibl.find("author")
-    valid_author_text = ["Plu.", "Id.", "id.", "Ps.-Plu."]
-    
-    if author_element is not None:
-        if author_element.text not in valid_author_text:
-            print(author_element)
-            
+        amendments["n_stephanus_not_in_work_range"] = True
 
     # Test title element
     # Is the abbreviation in <title> correct?
@@ -84,14 +82,12 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
 
     if title_element is not None:
         title = title_element.text
-        title = title.replace("[","")
-        title = title.replace("]","")
+        title = "".join([char for char in title if char not in "[]"])
         if n_abbreviation != title:
             title_element.text = f"[{n_abbreviation}]"
-            amendments.append("title_element_text_fixed")
+            amendments["title_element_abbrev_incorrect"] = True
 
     else:
-
         parent = bibl.getparent()
         while parent.getparent() is not None and parent.getparent().tag != "div2":
             parent = parent.getparent()
@@ -108,20 +104,22 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
             new_title_element = etree.SubElement(bibl, "title")
             new_title_element.text = f"[{n_abbreviation}]"    
 
+            author_element = bibl.find("author")
             if author_element is not None:
                     
                 new_title_element.tail = author_element.tail
                 author_element.tail = " "
-                amendments.append("title_element_added_post_author")
+                amendments["title_element_needed_post_author"] = True
 
             else:
                 new_title_element.tail = f" {bibl.text}"
                 bibl.text = ""
-                amendments.append("title_element_added_no_author")
+                amendments["title_element_needed_no_author"] = True
 
-    if len(amendments) > 0:
-        # etree_print(old_bibl)
-        # etree_print(bibl)
-        return bibl
+    for k, v in amendments.items():
+        if v:
+            # etree_print(old_bibl)
+            # etree_print(bibl)
+            return True
     
     return False

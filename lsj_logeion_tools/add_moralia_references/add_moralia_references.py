@@ -1,5 +1,3 @@
-import pandas as pd
-
 from lxml import etree
 from utilities.utilities import *
 
