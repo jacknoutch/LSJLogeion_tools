@@ -3,10 +3,12 @@ from lxml import etree
 from utilities.utilities import *
 from copy import deepcopy
 
-def get_plutarch_bibls(root: etree.Element) -> list[etree.Element]:
+def get_moralia_bibls(root: etree.Element) -> list[etree.Element]:
+    """Returns a list of <bibl> elements referring to Plutarch's Moralia."""
     return [e for e in root.iter() if is_valid(e)]
 
 def is_valid(element: etree.Element) -> bool:
+    """Returns a boolean to test if an element is a valid <bibl> element for Plutarch's Moralia."""
     if not element.tag == "bibl":
         return False
     
@@ -15,37 +17,37 @@ def is_valid(element: etree.Element) -> bool:
     if not n_attribute:
         return False
     
-    re_author = r".*tlg,(0007|0094),.*"
-    if not re.fullmatch(re_author, n_attribute):
+    parsed_n_attribute = parse_n_attribute(n_attribute)
+
+    if not parsed_n_attribute:
+        return False
+    
+    author, work, stephanus = parsed_n_attribute
+    if author not in ["0007", "0094"]:
+        return False
+    
+    global moralia_abbreviations
+    moralia_works = moralia_abbreviations["work"].unique()
+    work = int(work)
+    if work not in moralia_works:
         return False
 
     return True
 
-def process_plutarch_bibls(bibls: list[etree.Element]) -> list[etree.Element]:
+def process_moralia_bibls(bibls: list[etree.Element]) -> list[etree.Element]:
     
-    return [e for e in bibls if process_plutarch_bibl(e) is not False]
+    return [e for e in bibls if process_moralia_bibl(e) is not False]
 
-def process_plutarch_bibl(bibl: etree.Element) -> bool:
+def process_moralia_bibl(bibl: etree.Element) -> bool:
+    """"""
     old_bibl = deepcopy(bibl)
     
     amendments = []
-    
-    matches = has_valid_n_attribute(bibl)
 
-    if not matches:
-        return False
+    n_attribute = bibl.attrib["n"]
+    n_author, n_work, n_stephanus = parse_n_attribute(n_attribute)
     
-    n_author = matches["author"]
-    n_work = int(matches["work"])
-    n_stephanus = matches["stephanus"]
-    
-    # Is this a Moralia work?
-    global moralia_abbreviations
-    moralia_works = moralia_abbreviations["work"].unique()
-    if not n_work in moralia_works:
-        return False
-    
-    # Does the "n" stephanus match the one in the text?
+    # Does the "n" attribute's stephanus match the one in the text?
     bibl_text = "".join(bibl.itertext())
     re_stephanus = r"\b([1-9]\d{0,3}[a-f])\b"
     text_stephanus = re.search(re_stephanus, bibl_text).group()
@@ -55,7 +57,7 @@ def process_plutarch_bibl(bibl: etree.Element) -> bool:
         bibl.attrib["n"] = f"Perseus:abo:tlg,{n_author},{n_work:03}:{n_stephanus}"
         amendments.append("fixed_n_stephanus")
     
-    # Is the n reference's stephanus within the work's stephanus range?
+    # Is the "n" attribute's stephanus within the work's stephanus range?
     df_work = moralia_abbreviations.query(f"work == {n_work}")
     n_abbreviation = df_work["abbreviation"].iloc[0]
 
@@ -123,17 +125,3 @@ def process_plutarch_bibl(bibl: etree.Element) -> bool:
         return bibl
     
     return False
-
-def has_valid_n_attribute(element: etree.Element) -> bool:
-    
-    n_attribute = element.get("n")
-    re_n_attribute = r"Perseus:abo:tlg,(?P<author>0007|0094),(?P<work>\d{3}):(?P<stephanus>\d{1,4}[abcdef])"
-    
-    matches = re.fullmatch(re_n_attribute, n_attribute)
-
-    # Does the bibl have a valid "n" attribute?
-    if not matches:
-        # TODO: Check that there aren't Moralia references in here?
-        return False
-    
-    return matches

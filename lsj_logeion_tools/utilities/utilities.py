@@ -132,6 +132,18 @@ def split_stephanus(stephanus: str) -> tuple[int, str]:
     
     return page, section
 
+def parse_n_attribute(n_attribute: str) -> tuple[str, str, str]:
+    """Returns the meaningful elements of an 'n' attribute for Plutarch's Moralia.   
+    """
+
+    re_n_attribute = r"Perseus:abo:tlg,(?P<author>0007|0094),(?P<work>\d{3}):(?P<stephanus>\d{1,4}[abcdef])"
+    match = re.fullmatch(re_n_attribute, n_attribute)
+
+    if match is None:
+        return False
+    
+    return (match["author"], match["work"], match["stephanus"])
+
 # Loading Moralia data
 
 def load_moralia_abbreviations() -> pd.DataFrame:

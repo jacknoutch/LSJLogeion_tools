@@ -45,8 +45,8 @@ def main():
                         new_elements_counter += len(new_elements)
 
             elif mode == "amend":
-                plutarch_bibls = get_plutarch_bibls(root)
-                new_elements = process_plutarch_bibls(plutarch_bibls)
+                moralia_bibls = get_moralia_bibls(root)
+                new_elements = process_moralia_bibls(moralia_bibls)
                 new_elements_counter += len(new_elements)
 
             # Error checking - has the text changed?
