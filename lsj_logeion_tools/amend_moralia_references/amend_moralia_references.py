@@ -65,13 +65,18 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
         amendments["n_stephanus_doesnt_match"] = True
     
     # Is the "n" attribute's stephanus within the work's stephanus range?
-    df_work = moralia_abbreviations.query(f"work == {n_work}")
+    df_work = get_moralia_info(n_work, n_author)
+    
+    if df_work.empty:
+        # no matching author/work
+        #TODO: how to handle this?
+        return False
+
     n_abbreviation = df_work["abbreviation"].iloc[0]
 
-    n_work_start = df_work["start"].iloc[0]
-    n_work_end = df_work["end"].iloc[0]
-    
-    if is_larger_stephanus(n_work_start, n_stephanus) or is_larger_stephanus(n_stephanus, n_work_end):
+    n_start, n_end = get_stephanus_range(df_work)
+
+    if not is_between(n_stephanus, n_start, n_end):
         n_author, n_work, n_abbreviation = get_tlg_reference(n_stephanus, moralia_abbreviations)
         bibl.attrib["n"] = f"Perseus:abo:tlg,{n_author:04},{n_work:03}:{n_stephanus}"
         amendments["n_stephanus_not_in_work_range"] = True
@@ -122,4 +127,4 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
             # etree_print(bibl)
             return True
     
-    return False
+    return False    

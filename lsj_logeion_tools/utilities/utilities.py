@@ -109,6 +109,22 @@ def is_larger_stephanus(larger_ref: str, smaller_ref: str) -> bool:
 
     return page1 > page2
 
+def is_between(stephanus: str, start: str, end: str) -> bool:
+    """Return True if a stephanus reference is greater than 'start' and less than 'end'; false otherwise."""
+    return is_larger_stephanus(stephanus, start) and is_larger_stephanus(end, stephanus)
+
+def get_moralia_info(work: str, author: str) -> pd.DataFrame:
+    """Return a DataFrame of the row in Plutarch's Moralia which matches the given work and author references."""
+    global moralia_abbreviations
+    work = int(work)
+    author = int(author)
+    df_work = moralia_abbreviations.query(f"(work == {work}) and (author == {author})")
+    return df_work
+
+def get_stephanus_range(work: pd.DataFrame) -> tuple[str, str]:
+    """Return the stephanus refernces for the start and end of a particular work from Plutarch's Moralia"""
+    return (work["start"].iloc[0], work["end"].iloc[0])
+
 def split_stephanus(stephanus: str) -> tuple[int, str]:
     """Split a simple stephanus reference str to return a tuple of the page and section.
 
