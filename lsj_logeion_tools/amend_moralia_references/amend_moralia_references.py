@@ -5,9 +5,9 @@ from copy import deepcopy
 
 def get_moralia_bibls(root: etree.Element) -> list[etree.Element]:
     """Returns a list of <bibl> elements referring to Plutarch's Moralia."""
-    return [e for e in root.iter() if is_valid(e)]
+    return [e for e in root.iter() if is_valid_moralia(e)]
 
-def is_valid(element: etree.Element) -> bool:
+def is_valid_moralia(element: etree.Element) -> bool:
     """Returns a boolean to test if an element is a valid <bibl> element for Plutarch's Moralia."""
     if not element.tag == "bibl":
         return False
