@@ -1,12 +1,10 @@
 # LSJLogeion_tools
-This repository containts two scripts for amending the LSJLogeion XML files for LSJ. The scripts are designed to fix those instances in the text where Plutarch's *Moralia* are referenced, but which do not have appropriate `<bibl>` tags.
-
-In total these scripts find and wrap 2,112 `Id.` references and 5,159 *Moralia* references.
+This repository containts scripts for amending the LSJLogeion XML files for LSJ. The scripts are designed to fix those instances in the text where Plutarch's *Moralia* are referenced, but which do not have appropriate `<bibl>` tags.
 
 ## find_and_wrap_id_instances
-This script finds all the instances of `Id.` in the text and wraps them in an `<author>` tag. This is necessary as the `add_moralia_references/main.py` searches for references to the *Moralia* by `<author>` tag.
+This script finds all the instances of `Id.` in the text and wraps them in an `<author>` tag. This prepares the ground for subsequent scipting.
 
-To execute, run the command `python3 main.py [source] [destination]`, where `[source]` and `[destination]` are folders where containing the LSJ XML files to be amended and the intended destination for amended files. You must be in the right folder.
+To execute, run the command `python3 main.py id [source] [destination]`, where `[source]` and `[destination]` are folders where containing the LSJ XML files to be amended and the intended destination for amended files. You must be in the right folder.
 
 The default values of `[source]` and `[destination]` are `../../LSJLogeion/` and `../../LSJLogeionNew/` respectively.
 

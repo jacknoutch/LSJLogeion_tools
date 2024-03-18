@@ -49,6 +49,9 @@ def main():
                 new_elements = process_moralia_bibls(moralia_bibls)
                 new_elements_counter += len(new_elements)
 
+            elif mode == "id":
+                file_string = find_and_wrap_id_instances(file_string)
+
             # Error checking - has the text changed?
             if error_checking:
                 ending_text = "".join(root.itertext())
