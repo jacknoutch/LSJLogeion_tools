@@ -4,7 +4,7 @@ This repository containts scripts for amending the LSJLogeion XML files for LSJ.
 ## find_and_wrap_id_instances
 This script finds all the instances of `Id.` in the text and wraps them in an `<author>` tag. This prepares the ground for subsequent scipting.
 
-To execute, run the command `python3 main.py id [source] [destination]`, where `[source]` and `[destination]` are folders where containing the LSJ XML files to be amended and the intended destination for amended files. You must be in the right folder.
+To execute, run the command `python main.py id [source] [destination]`, where `[source]` and `[destination]` are folders where containing the LSJ XML files to be amended and the intended destination for amended files. You must be in the right folder.
 
 The default values of `[source]` and `[destination]` are `../../LSJLogeion/` and `../../LSJLogeionNew/` respectively.
 
@@ -13,14 +13,18 @@ This script searches for all references to Plutarch's *Moralia* and wraps each o
 
 The script works by searching for references in the tail of elements tags which refer to Plutarch. That is, its nearest preceding `<author>` element is either  `<author>Plu.</author>` or `<author>Id.</author>`, where the `Id.` refers back to a previous Plutarch `<author>` element.
 
-Executing the script is done in the same way as for the `find_and_wrap_id_instances` script. Make sure you are in the right folder.
+To execute run the command `python main.py add [source] [destination]` where the `[source]` and `[destination]` are where to read from and save to the LSJ XML files. Make sure you are in the right folder.
+
+The default values of `[source]` and `[destination]` are `../../LSJLogeion/` and `../../LSJLogeionNew/` respectively.
+
+## amend_moralia_references
+This script finds all `<bibl>` elements referring to Plutarch's *Moralia* and checks the following:
+1. Is the stephanus reference in the text the same as that in the "n" reference of the `<bibl>` element?
+2. Is the stephanus in the correct range of the work identified in the "n" reference?
+3. Is there a suitable `<title>` element within the `<bibl>` element? If so, is the abbreviation correct? If no `<title>` is present, one is added with the appropriate abbreviation, after an `<author>` element if one is present.
 
 ## Testing
-These scripts have some small testing scripts to ensure some kind of accuracy.
-
-For the `add_moralia_references` script, the tests focus on the validity of the Stephanus references, to make sure only *Moralia* references are captured. Within the `main.py` script itself, an error is also raised if the actual text of the XML (as opposed to the  lement objects within it) is changed. This should ensure the script does not alter the LSJ text.
-
-For the `find_and_wrap_id_instances` script, the only test is to ensure the actual text of the LSJ is not changed in the process. Unlike `add_moralia_references`, this is in a proper test module rather than the `main.py`.
+These scripts have some small testing scripts to ensure some kind of accuracy. 
 
 Following exploratory testing, I am confident that there are no relevant references in the text nodes of any elements. The assumption on which these scripts are based, that it is the tail node of elements which contains unwrapped *Moralia* elements appears to hold.
 
