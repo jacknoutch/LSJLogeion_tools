@@ -160,6 +160,27 @@ def parse_n_attribute(n_attribute: str) -> tuple[str, str, str]:
     
     return (match["author"], match["work"], match["stephanus"])
 
+
+def get_previous_tag(tag: str, target_element: etree.Element, search_top="div1") -> etree.Element:
+    """Return the previous element of a given tag, before 'target_element'.
+    
+    search_top is the highest level of the tree in which to conduct the search."""
+    
+    parent = target_element.getparent()
+
+    while parent.getparent() is not None and parent.getparent().tag != search_top:
+        parent = parent.getparent()
+
+    previous_title = None
+
+    for element in parent.findall(".//"):
+        if element.tag == tag:
+            previous_title = element
+        if element == target_element:
+            break
+
+    return previous_title
+
 # Loading Moralia data
 
 def load_moralia_abbreviations() -> pd.DataFrame:

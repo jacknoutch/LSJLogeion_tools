@@ -87,19 +87,17 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
         n_abbreviation = df_work["abbreviation"].iloc[0]
     except NameError:
         pass
-
     
     if title_element is not None:
         title = title_element.text
         title = "".join([char for char in title if char not in "[]"])
-        
 
         if n_abbreviation != title:
             title_element.text = f"[{n_abbreviation}]"
             amendments["title_element_abbrev_incorrect"] = True
 
     else:
-        previous_title = get_previous_tag("title", bibl)
+        previous_title = get_previous_tag("title", bibl, "div2")
 
         if previous_title is None or previous_title.text != f"[{n_abbreviation}]":
             new_title_element = etree.SubElement(bibl, "title")
@@ -124,21 +122,3 @@ def process_moralia_bibl(bibl: etree.Element) -> bool:
             return True
     
     return False    
-
-def get_previous_tag(tag: str, target_element: etree.Element) -> etree.Element:
-    """Return the previous element of a given tag, before 'target_element'."""
-    
-    parent = target_element.getparent()
-
-    while parent.getparent() is not None and parent.getparent().tag != "div2":
-        parent = parent.getparent()
-
-    previous_title = None
-
-    for element in parent.findall(".//"):
-        if element.tag == tag:
-            previous_title = element
-        if element == target_element:
-            break
-
-    return previous_title
